@@ -6,7 +6,6 @@ import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
 
 const Navigation = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState('English');
   const { language, translations, handleLang } = useContext(LanguageContext);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -16,25 +15,30 @@ const Navigation = () => {
 
   return (
     <>
-      <div className='bg-gray-800 text-white p-4 flex justify-between items-center'>
+      <nav className='bg-gray-800 text-white p-4 flex justify-between items-center sm:text-lg md:text-xl lg:text-2xl'>
         <div className='flex items-center'>
           <img
             src={logo}
             alt='Logo'
             className='h-8'
           />
-          <h1 className='text-lg ml-3 font-bold'>learnDeals</h1>
+          <h1 className='ml-3 font-bold'>learnDeals</h1>
         </div>
 
         <div className=' items-center hidden sm:block'>
           <NavLink
             to='/'
-            className='mx-2 hover:underline'>
+            className='mx-2 outline-none'>
+            Home
+          </NavLink>
+          <NavLink
+            to='/courses'
+            className='mx-2 outline-none'>
             {translations.all}
           </NavLink>
           <NavLink
             to='/search'
-            className='mx-2 hover:underline'>
+            className='mx-2 outline-none'>
             {translations.search}
           </NavLink>
           <DropDown />
@@ -42,7 +46,7 @@ const Navigation = () => {
             id='select'
             value={language}
             onChange={handleLang}
-            className='rounded-md border border-gray-300 bg-gray-800 px-2 py-1 mx-2 text-sm focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
+            className='rounded-md  bg-gray-800 px-2 py-1 mx-2 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
             <option
               id='English'
               value='en'>
@@ -72,13 +76,13 @@ const Navigation = () => {
             </svg>
           </button>
         </div>
-      </div>
+      </nav>
       {mobileMenuOpen && (
-        <div className='block md:hidden bg-gray-800 text-white p-4 text-lg md:text-xl lg:text-2xl '>
+        <div className='block md:hidden bg-gray-800 text-white  p-4 sm:text-lg md:text-xl lg:text-2xl '>
           <div className='flex flex-col items-start gap-2'>
             <NavLink
               to='/'
-              className='no-underline text-lg'>
+              className='no-underline'>
               {translations.all}
             </NavLink>
             <NavLink
@@ -91,7 +95,7 @@ const Navigation = () => {
               id='select2'
               value={language}
               onChange={handleLang}
-              className='rounded-lg text-lg border border-gray-300 bg-gray-800 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
+              className='rounded-lg px-0 bg-gray-800 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
               <option
                 id='English2'
                 value='en'>

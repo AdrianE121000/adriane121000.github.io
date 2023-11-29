@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Courses from '../components/Courses';
 import Model from '../components/Model';
 import Search from '../components/Search';
+import Home from '../components/Home';
 
 const Rutas = () => {
   return (
@@ -10,6 +11,10 @@ const Rutas = () => {
       <Routes>
         <Route
           path='/'
+          element={<Home />}
+        />
+        <Route
+          path='/courses'
           element={<Courses />}
         />
         <Route
