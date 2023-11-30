@@ -9,13 +9,13 @@ const DropDown = () => {
   const { translations } = useContext(LanguageContext);
 
   return (
-    <div className='relative inline-block text-left sm:text-lg md:text-xl lg:text-2xl'>
+    <div className='relative inline-block text-left sm:text-lg md:text-xl '>
       <div>
         <span className='rounded-md shadow-sm'>
           <button
             onClick={() => setIsOpen(!isOpen)}
             type='button'
-            className='inline-flex sm:text-lg md:text-xl lg:text-2xl justify-center w-full rounded-md  bg-gray-800  py-1 text-white '
+            className='inline-flex sm:text-lg md:text-xl justify-center w-full rounded-md  bg-gray-800  py-1 text-white '
             id='options-menu'
             aria-expanded='true'
             aria-haspopup='true'>

@@ -15,7 +15,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className='bg-gray-800 text-white p-4 flex justify-between items-center sm:text-lg md:text-xl lg:text-2xl'>
+      <nav className='bg-gray-800 text-white p-4 flex justify-between items-center sm:text-lg md:text-xl '>
         <div className='flex items-center'>
           <img
             src={logo}
@@ -25,10 +25,10 @@ const Navigation = () => {
           <h1 className='ml-3 font-bold'>learnDeals</h1>
         </div>
 
-        <div className=' items-center hidden sm:block'>
+        <div className=' items-center hidden md:block'>
           <NavLink
             to='/'
-            className='mx-2 outline-none'>
+            className='mx-2 outline-none border'>
             Home
           </NavLink>
           <NavLink
@@ -59,6 +59,7 @@ const Navigation = () => {
             </option>
           </select>
         </div>
+        <div></div>
         <div className='block md:hidden'>
           <button onClick={handleMobileMenuClick}>
             <svg
@@ -82,6 +83,11 @@ const Navigation = () => {
           <div className='flex flex-col items-start gap-2'>
             <NavLink
               to='/'
+              className='no-underline'>
+              Home
+            </NavLink>
+            <NavLink
+              to='/courses'
               className='no-underline'>
               {translations.all}
             </NavLink>
