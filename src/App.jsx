@@ -4,8 +4,10 @@ import Rutas from './routes/Rutas';
 function App() {
   return (
     <CoursesProvider>
-      <NavBar />
-      <Rutas />
+      <div className='font-roboto'>
+        <NavBar />
+        <Rutas />
+      </div>
     </CoursesProvider>
   );
 }

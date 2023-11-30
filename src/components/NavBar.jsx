@@ -28,7 +28,7 @@ const Navigation = () => {
         <div className=' items-center hidden md:block'>
           <NavLink
             to='/'
-            className='mx-2 outline-none border'>
+            className='mx-2 outline-none'>
             Home
           </NavLink>
           <NavLink

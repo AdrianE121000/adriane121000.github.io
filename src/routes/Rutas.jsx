@@ -4,6 +4,7 @@ import Courses from '../components/Courses';
 import Model from '../components/Model';
 import Search from '../components/Search';
 import Home from '../components/Home';
+import Course from '../components/Course';
 
 const Rutas = () => {
   return (
@@ -20,6 +21,10 @@ const Rutas = () => {
         <Route
           path='/cat/:category'
           element={<Model />}
+        />
+        <Route
+          path='/course/:key'
+          element={<Course />}
         />
         <Route
           path='/search'
