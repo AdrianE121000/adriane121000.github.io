@@ -23,7 +23,7 @@ const Donation = () => {
     <>
       <div className='container mx-auto px-4'>
         <div className='text-center mt-12'>
-          <h2>{translations.donationTitle}</h2>
+          <h2 className='text-3xl'>{translations.donationTitle}</h2>
           <p>{translations.donationSubTitle}</p>
           <div className='flex flex-col mt-2 items-center '>
             <div className='flex items-center justify-center m-2  '>
