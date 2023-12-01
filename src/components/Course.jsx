@@ -4,9 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { LanguageContext } from '../context/LanguageContext';
 import { useCourseFetch } from '../hooks/useCourseFetch';
+import { useCourseTimeCalculate } from '../hooks/useCourseTimeCalculate';
 
 const Course = () => {
   const { translations } = useContext(LanguageContext);
+  const { calculateCourseTime } = useCourseTimeCalculate();
   const { key } = useParams();
   const navigate = useNavigate();
 
@@ -47,7 +49,8 @@ const Course = () => {
                 {course.name}
               </h2>
               <p className='text-lg md:text-xl text-gray-600 mb-2'>
-                {translations.fecha}: {course.last_update_date}
+                {translations.fecha}:{' '}
+                {calculateCourseTime(course.last_update_date)}
               </p>
               <p className='text-lg md:text-xl text-gray-600 mb-2'>
                 {translations.lenguaje}: {course.language}
