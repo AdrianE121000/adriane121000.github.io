@@ -5,6 +5,7 @@ import Model from '../components/Model';
 import Search from '../components/Search';
 import Home from '../components/Home';
 import Course from '../components/Course';
+import Donation from '../components/Donation';
 
 const Rutas = () => {
   return (
@@ -29,6 +30,10 @@ const Rutas = () => {
         <Route
           path='/search'
           element={<Search />}
+        />
+        <Route
+          path='/donation'
+          element={<Donation />}
         />
         <Route
           path='*'
