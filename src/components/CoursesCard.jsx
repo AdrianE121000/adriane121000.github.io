@@ -3,9 +3,11 @@ import { LanguageContext } from '../context/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.ico';
 import Pagination from './Pagination';
+import { useCourseTimeCalculate } from '../hooks/useCourseTimeCalculate';
 
 const CoursesCard = ({ courses }) => {
   const { translations } = useContext(LanguageContext);
+  const { calculateCourseTime } = useCourseTimeCalculate();
   const navigate = useNavigate();
 
   const totalProducts = courses.length;
@@ -40,7 +42,8 @@ const CoursesCard = ({ courses }) => {
                     {curso.category}
                   </div>
                   <div className='text-sm py-1'>
-                    {translations.fecha}: {curso.last_update_date} : dias
+                    {translations.fecha}:{' '}
+                    {calculateCourseTime(curso.last_update_date)}
                   </div>
                 </div>
               </div>
