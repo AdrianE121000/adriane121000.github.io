@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.ico';
 import Pagination from './Pagination';
 import { useCourseTimeCalculate } from '../hooks/useCourseTimeCalculate';
+import Footer from './Footer';
 
 const CoursesCard = ({ courses }) => {
   const { translations } = useContext(LanguageContext);
@@ -57,6 +58,7 @@ const CoursesCard = ({ courses }) => {
           totalProducts={totalProducts}
         />
       </div>
+      <Footer />
     </>
   );
 };

@@ -166,7 +166,7 @@ export const dictionary = {
     enCourses: 'Courses in English',
     espCourses: 'Courses in Spanish',
     programmingCourses: 'Programming Courses',
-    tlChannel: 'Telegram Channels',
+    tlChannel: "Telegram Channel's",
     donation: 'donation',
     copyright: 'All rights reserved',
     donationTitle: 'Help us with a donation!',
