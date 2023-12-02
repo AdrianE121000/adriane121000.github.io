@@ -1,17 +1,17 @@
 import React from 'react';
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
-import { FaBitcoin } from 'react-icons/fa';
-import { FaPaypal } from 'react-icons/fa';
+import { FaBitcoin, FaPaypal } from 'react-icons/fa';
 import { SiTether, SiEthereum, SiDogecoin, SiBinance } from 'react-icons/si';
 import { FiClipboard } from 'react-icons/fi';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { Toaster, toast } from 'sonner';
 
 const Donation = () => {
   const { translations } = useContext(LanguageContext);
 
   const addresses = {
-    paypal: 'payPal',
+    paypal: 'jnnjcsdv555vlsivjskjasfjj5v5vevjusdcisa',
     btc: 'BTC',
     bnb: 'BNB',
     usdt: 'USDT TRC-20',
@@ -21,6 +21,7 @@ const Donation = () => {
 
   return (
     <>
+      <Toaster richColors />
       <div className='container mx-auto px-4'>
         <div className='text-center mt-12'>
           <h2 className='text-3xl'>{translations.donationTitle}</h2>
@@ -39,7 +40,9 @@ const Donation = () => {
                 className='mx-2 p-1 border border-gray-600 rounded  '
               />
               <CopyToClipboard text={addresses.paypal}>
-                <button className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
+                <button
+                  onClick={() => toast.success(`Copied: ${addresses.paypal}`)}
+                  className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
                   <FiClipboard />
                 </button>
               </CopyToClipboard>
