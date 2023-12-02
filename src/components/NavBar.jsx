@@ -37,6 +37,11 @@ const Navigation = () => {
             {translations.all}
           </NavLink>
           <NavLink
+            to='/donation'
+            className='mx-2 outline-none'>
+            donation
+          </NavLink>
+          <NavLink
             to='/search'
             className='mx-2 outline-none'>
             {translations.search}

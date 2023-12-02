@@ -51,7 +51,7 @@ const Pagination = ({
         <button
           style={{ visibility: pageNumbers.length === 0 ? 'hidden' : '' }}
           aria-current='page'
-          className='relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-gray-900 border border-gray-500 rounded-lg'>
+          className='relative z-10 inline-flex items-center border-4 border-indigo-600 px-4 py-2 text-sm font-semibold text-gray-900  rounded-lg'>
           {currentPage}
         </button>
         <button
@@ -110,7 +110,7 @@ const Pagination = ({
                   }}
                   aria-current='page'
                   className={`px-4 py-2 text-gray-900 border border-gray-500 rounded-lg ${
-                    currentPage === item ? 'bg-indigo-600' : ''
+                    currentPage === item ? 'border-4 border-indigo-600' : ''
                   }`}>
                   {item}
                 </button>
