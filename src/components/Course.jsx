@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { LanguageContext } from '../context/LanguageContext';
 import { useCourseFetch } from '../hooks/useCourseFetch';
 import { useCourseTimeCalculate } from '../hooks/useCourseTimeCalculate';
+import Cookies from './Cookies';
 
 const Course = () => {
   const { translations } = useContext(LanguageContext);
@@ -16,18 +17,22 @@ const Course = () => {
 
   if (error != undefined) {
     return (
-      <div className='flex justify-center items-center h-screen'>
-        <div
-          className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'
-          role='alert'>
-          <strong className='font-bold'>Error: </strong>
-          <span className='block sm:inline'>{translations.noFetch2}</span>
+      <>
+        <Cookies />
+        <div className='flex justify-center items-center h-screen'>
+          <div
+            className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'
+            role='alert'>
+            <strong className='font-bold'>Error: </strong>
+            <span className='block sm:inline'>{translations.noFetch2}</span>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
   return (
     <>
+      <Cookies />
       {course.name === undefined ? (
         <div className='flex justify-center items-center h-screen'>
           <div className='w-16 h-16 relative'>

@@ -5,6 +5,7 @@ import { sortByTime } from '../logic/sortCoursesByTime';
 import { useForm } from 'react-hook-form';
 import { FiSearch } from 'react-icons/fi';
 import { LanguageContext } from '../context/LanguageContext';
+import Cookies from './Cookies';
 
 const Courses = () => {
   const { courses } = useContext(CoursesContext);
@@ -32,6 +33,7 @@ const Courses = () => {
 
   return (
     <>
+      <Cookies />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='flex items-center flex-col mt-5'>

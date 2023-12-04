@@ -5,7 +5,7 @@ import logo from '../assets/logo.ico';
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
 
-const Navigation = () => {
+const NavBar = () => {
   const { language, translations, handleLang } = useContext(LanguageContext);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -115,4 +115,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default NavBar;

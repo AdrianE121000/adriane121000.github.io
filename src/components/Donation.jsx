@@ -6,6 +6,7 @@ import { SiTether, SiEthereum, SiDogecoin, SiBinance } from 'react-icons/si';
 import { FiClipboard } from 'react-icons/fi';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Toaster, toast } from 'sonner';
+import Cookies from './Cookies';
 
 const Donation = () => {
   const { translations } = useContext(LanguageContext);
@@ -21,6 +22,7 @@ const Donation = () => {
 
   return (
     <>
+      <Cookies />
       <Toaster richColors />
       <div className='container mx-auto px-4'>
         <div className='text-center mt-12'>
