@@ -2,7 +2,6 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Courses from '../components/Courses';
 import Model from '../components/Model';
-import Search from '../components/Search';
 import Home from '../components/Home';
 import Course from '../components/Course';
 import Donation from '../components/Donation';
@@ -26,10 +25,6 @@ const Rutas = () => {
         <Route
           path='/course/:key'
           element={<Course />}
-        />
-        <Route
-          path='/search'
-          element={<Search />}
         />
         <Route
           path='/donation'

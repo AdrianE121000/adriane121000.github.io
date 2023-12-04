@@ -29,7 +29,7 @@ const Navigation = () => {
           <NavLink
             to='/'
             className='mx-2 outline-none'>
-            Home
+            {translations.home}
           </NavLink>
           <NavLink
             to='/courses'
@@ -40,11 +40,6 @@ const Navigation = () => {
             to='/donation'
             className='mx-2 outline-none'>
             donation
-          </NavLink>
-          <NavLink
-            to='/search'
-            className='mx-2 outline-none'>
-            {translations.search}
           </NavLink>
           <DropDown />
           <select
@@ -89,17 +84,12 @@ const Navigation = () => {
             <NavLink
               to='/'
               className='no-underline'>
-              Home
+              {translations.home}
             </NavLink>
             <NavLink
               to='/courses'
               className='no-underline'>
               {translations.all}
-            </NavLink>
-            <NavLink
-              to='/search'
-              className='no-underline'>
-              {translations.search}
             </NavLink>
             <DropDown />
             <select

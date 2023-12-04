@@ -56,7 +56,7 @@ const Course = () => {
                 {translations.lenguaje}: {course.language}
               </p>
               <p className='text-lg md:text-xl text-gray-600 mb-2'>
-                Categoría: {course.category}
+                {translations.cat}: {course.category}
               </p>
             </div>
           </div>

@@ -55,8 +55,9 @@ export const dictionary = {
       },
     ],
     search: 'Buscar',
-    error: 'Campo obligatorio',
+    error: 'Escribe el nombre del curso que deseas buscar',
     fecha: 'Actualizado hace',
+    home: 'Inicio',
     lenguaje: 'Idioma',
     volver: 'Volver',
     ir: 'Ir al curso',
@@ -64,6 +65,7 @@ export const dictionary = {
     join: 'Únete al Canal de Telegram',
     all: 'Todos los Cursos',
     noCourses: 'No hay cursos en esta categoría',
+    noSearch: 'No se encontraron cursos para esta búsqueda',
     day: 'dias',
     days: 'dia',
     hours: 'horas',
@@ -71,6 +73,7 @@ export const dictionary = {
     minutes: 'minutos',
     second: 'segundos',
     category: 'Categorías',
+    cat: 'Categoría',
     noFetch:
       'Ocurrió un error al cargar los cursos, por favor inténtelo mas tarde.',
     noFetch2:
@@ -143,8 +146,9 @@ export const dictionary = {
       },
     ],
     search: 'Search',
-    error: 'Mandatory field',
+    error: 'Write the name of the course you want to search for',
     fecha: 'Updated ago',
+    home: 'Home',
     lenguaje: 'Language',
     volver: 'Back',
     ir: 'Take Course',
@@ -152,6 +156,7 @@ export const dictionary = {
     join: 'Join Telegram Chanel',
     all: 'All Courses',
     noCourses: 'There are no courses in this category yet',
+    noSearch: 'No courses were found for this search',
     day: 'days',
     days: 'day',
     hours: 'hours',
@@ -159,6 +164,7 @@ export const dictionary = {
     minutes: 'minutes',
     second: 'seconds',
     category: 'Categories',
+    cat: 'Category',
     noFetch:
       'An error occurred while loading the courses, please try again later.',
     noFetch2:

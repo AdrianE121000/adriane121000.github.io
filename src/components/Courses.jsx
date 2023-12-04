@@ -4,9 +4,11 @@ import CoursesCard from './CoursesCard';
 import { sortByTime } from '../logic/sortCoursesByTime';
 import { useForm } from 'react-hook-form';
 import { FiSearch } from 'react-icons/fi';
+import { LanguageContext } from '../context/LanguageContext';
 
 const Courses = () => {
   const { courses } = useContext(CoursesContext);
+  const { translations } = useContext(LanguageContext);
   const [result, setResult] = useState([]);
   const sortedCourses = sortByTime(result.length === 0 ? courses : result);
   const isFiltered = useRef(false);
@@ -37,7 +39,7 @@ const Courses = () => {
           <input
             id='search'
             type='text'
-            placeholder='search'
+            placeholder={translations.search}
             className='w-60 md:w-80 lg:w-96 px-4 py-2 rounded-l-md focus:outline-none focus:ring focus:border-blue-300'
             {...register('search', { required: true })}
           />
@@ -48,17 +50,15 @@ const Courses = () => {
           </button>
         </div>
         {errors.search && (
-          <span className='text-red-500 mt-2'>introduce algo para buscar</span>
+          <span className='text-red-500 mt-2'>{translations.error}</span>
         )}
       </form>
       {result.length === 0 && isFiltered.current === true ? (
         <div className='flex justify-center items-center mt-20'>
           <div
-            className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'
+            className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded '
             role='alert'>
-            <span className='block sm:inline'>
-              No se encontraron cursos para esta busqueda
-            </span>
+            <span className='block sm:inline'>{translations.noSearch}</span>
           </div>
         </div>
       ) : (
