@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
 import { FaTelegramPlane } from 'react-icons/fa';
 import logo from '../assets/logo.ico';

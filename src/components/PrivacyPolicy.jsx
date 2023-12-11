@@ -1,9 +1,7 @@
-import React from 'react';
-
 const PrivacyPolicy = () => {
   return (
     <>
-      <div className='container mx-auto px-4 mb-5'>
+      <div className='container mx-auto px-4 mt-20 mb-5'>
         <h1 className='text-2xl font-bold'>
           Privacy Policy and Use of Cookies:
         </h1>

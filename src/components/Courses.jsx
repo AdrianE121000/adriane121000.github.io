@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from 'react';
+import { useContext, useState, useRef } from 'react';
 import { CoursesContext } from '../context/CoursesContext';
 import CoursesCard from './CoursesCard';
 import { sortByTime } from '../logic/sortCoursesByTime';
@@ -36,8 +36,8 @@ const Courses = () => {
       <Cookies />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='flex items-center flex-col mt-5'>
-        <div className='flex'>
+        className='flex items-center flex-col'>
+        <div className='flex mt-5'>
           <input
             id='search'
             type='text'

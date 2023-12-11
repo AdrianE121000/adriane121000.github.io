@@ -6,7 +6,9 @@ function App() {
     <CoursesProvider>
       <div className='font-roboto'>
         <NavBar />
-        <Rutas />
+        <section className='mt-16'>
+          <Rutas />
+        </section>
       </div>
     </CoursesProvider>
   );

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
 import { FaBitcoin, FaPaypal } from 'react-icons/fa';
@@ -24,7 +23,7 @@ const Donation = () => {
     <>
       <Cookies />
       <Toaster richColors />
-      <div className='container mx-auto px-4'>
+      <div className='container mx-auto px-4 mt-20'>
         <div className='text-center mt-12'>
           <h2 className='text-3xl'>{translations.donationTitle}</h2>
           <p>{translations.donationSubTitle}</p>

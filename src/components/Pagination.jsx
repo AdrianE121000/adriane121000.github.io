@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Pagination = ({
   productsForPage,
   currentPage,
@@ -49,7 +47,7 @@ const Pagination = ({
           </svg>
         </button>
         <button
-          style={{ visibility: pageNumbers.length === 0 ? 'hidden' : '' }}
+          style={{ visibility: pageNumbers.length <= 1 ? 'hidden' : '' }}
           aria-current='page'
           className='inline-flex items-center border-4 border-indigo-600 px-4 py-2 text-sm font-semibold text-gray-900  rounded-lg'>
           {currentPage}
