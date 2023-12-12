@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { FiSearch } from 'react-icons/fi';
 import { LanguageContext } from '../context/LanguageContext';
 import Cookies from './Cookies';
+import { CoursesSkeleton } from './skeletons';
 
 const Courses = () => {
   const { courses } = useContext(CoursesContext);
@@ -63,6 +64,8 @@ const Courses = () => {
             <span className='block sm:inline'>{translations.noSearch}</span>
           </div>
         </div>
+      ) : courses.length === 0 ? (
+        <CoursesSkeleton />
       ) : (
         <CoursesCard courses={sortedCourses} />
       )}

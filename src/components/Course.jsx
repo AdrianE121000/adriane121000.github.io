@@ -5,6 +5,7 @@ import { LanguageContext } from '../context/LanguageContext';
 import { useCourseFetch } from '../hooks/useCourseFetch';
 import { useCourseTimeCalculate } from '../hooks/useCourseTimeCalculate';
 import Cookies from './Cookies';
+import { CourseSkeleton } from './skeletons';
 
 const Course = () => {
   const { translations } = useContext(LanguageContext);
@@ -33,11 +34,7 @@ const Course = () => {
     <>
       <Cookies />
       {course.name === undefined ? (
-        <div className='flex justify-center items-center h-screen'>
-          <div className='w-16 h-16 relative'>
-            <div className='absolute w-full h-full border-4 border-gray-950 rounded-full border-dashed border-opacity-50 animate-spin'></div>
-          </div>
-        </div>
+        <CourseSkeleton />
       ) : (
         <div className='max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-6 m-4'>
           <div className='flex flex-col md:flex-row'>

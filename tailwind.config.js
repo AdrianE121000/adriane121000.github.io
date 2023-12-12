@@ -7,6 +7,13 @@ export default {
         roboto: "'Roboto' , serif ",
       },
     },
+    keyframes: {
+      shimmer: {
+        '100%': {
+          transform: 'translateX(100%)',
+        },
+      },
+    },
   },
   plugins: [],
 };

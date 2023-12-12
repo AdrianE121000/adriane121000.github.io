@@ -11,7 +11,6 @@ const CoursesCard = ({ courses }) => {
   const { calculateCourseTime } = useCourseTimeCalculate();
   const navigate = useNavigate();
 
-  // eslint-disable-next-line react/prop-types
   const totalProducts = courses.length;
   const [productsForPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,7 +23,6 @@ const CoursesCard = ({ courses }) => {
       <div className='container mx-auto px-4 mt-5'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
           {courses
-            // eslint-disable-next-line react/prop-types
             .map((curso, index) => (
               <div
                 className='bg-white p-4 shadow-md rounded-md flex flex-col cursor-pointer hover:shadow-2xl'
@@ -37,7 +35,7 @@ const CoursesCard = ({ courses }) => {
                     alt='imageCourse'
                   />
                 </div>
-                <div className='p-4'>
+                <div className='p-2'>
                   <div className='text-lg font-bold mb-2 line-clamp-3'>
                     {curso.name}
                   </div>
