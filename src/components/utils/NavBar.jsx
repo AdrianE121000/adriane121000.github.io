@@ -79,7 +79,7 @@ const NavBar = () => {
       </nav>
       {mobileMenuOpen && (
         <div
-          className={`block md:hidden fixed w-full animate-slowTop bg-gray-800 text-white  py-2 sm:text-lg md:text-xl lg:text-2xl ${
+          className={`block md:hidden fixed z-50 w-full animate-slowTop bg-gray-800 text-white  py-2 sm:text-lg md:text-xl lg:text-2xl ${
             mobileMenuOpen ? 'animate-slowBottom' : 'animate-slowTop'
           }`}>
           <div className='flex flex-col justify-center text-center gap-1 '>

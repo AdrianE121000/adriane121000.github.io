@@ -6,12 +6,14 @@ export function useAllCoursesFetch() {
   const [error, setError] = useState();
 
   useEffect(() => {
-    fetch('http://localhost:5173/learnDeals/courses.json')
-      .then((res) => res.json())
-      .then((json) => {
-        setCourses(json.courses);
-      })
-      .catch((error) => setError(error));
+    setTimeout(() => {
+      fetch('https://adriane121000.github.io/learnDeals/courses.json')
+        .then((res) => res.json())
+        .then((json) => {
+          setCourses(json.courses);
+        })
+        .catch((error) => setError(error));
+    }, 3000);
   }, []);
 
   return { courses, error };
