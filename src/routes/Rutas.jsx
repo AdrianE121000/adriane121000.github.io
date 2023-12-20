@@ -4,7 +4,7 @@ import Model from '../components/utils/Model';
 import Home from '../components/pages/Home';
 import Course from '../components/pages/Course';
 import Donation from '../components/pages/Donation';
-import PrivacyPolicy from '../components/privacy/PrivacyPolicy';
+import PrivacyPolicy from '../components/pages/PrivacyPolicy';
 
 const Rutas = () => {
   return (

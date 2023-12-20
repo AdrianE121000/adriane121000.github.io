@@ -5,7 +5,8 @@ import { SiTether, SiEthereum, SiDogecoin, SiBinance } from 'react-icons/si';
 import { FiClipboard } from 'react-icons/fi';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Toaster, toast } from 'sonner';
-import Cookies from '../privacy/Cookies';
+import Cookies from '../utils/Cookies';
+import Footer from '../utils/Footer';
 
 const Donation = () => {
   const { translations } = useContext(LanguageContext);
@@ -23,8 +24,8 @@ const Donation = () => {
     <>
       <Cookies />
       <Toaster richColors />
-      <div className='container mx-auto px-4 mt-20'>
-        <div className='text-center mt-12'>
+      <div className='container mx-auto px-4 mt-16'>
+        <div className='text-center mt-16 pt-5'>
           <h2 className='text-3xl'>{translations.donationTitle}</h2>
           <p>{translations.donationSubTitle}</p>
           <div className='flex flex-col mt-2 items-center '>
@@ -149,11 +150,12 @@ const Donation = () => {
               </CopyToClipboard>
             </div>
           </div>
-          <p className='text-lg text-green-700 mt-5'>
+          <p className='text-lg text-green-700 mt-5 mb-10'>
             {translations.donationThanks}
           </p>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

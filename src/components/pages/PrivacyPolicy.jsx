@@ -1,8 +1,8 @@
 const PrivacyPolicy = () => {
   return (
     <>
-      <div className='container mx-auto px-4 mt-20 mb-5'>
-        <h1 className='text-2xl font-bold'>
+      <div className='container mx-auto px-4 mt-16 mb-5'>
+        <h1 className='text-2xl font-bold pt-5'>
           Privacy Policy and Use of Cookies:
         </h1>
         <p>

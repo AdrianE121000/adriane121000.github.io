@@ -76,40 +76,43 @@ const NavBar = () => {
             </button>
           </div>
         </div>
-        {mobileMenuOpen && (
-          <div className='block md:hidden bg-gray-800 text-white  py-2 sm:text-lg md:text-xl lg:text-2xl '>
-            <div className='flex flex-col justify-center text-center gap-1 '>
-              {navItems.map((nav, index) => (
-                <NavLink
-                  key={index}
-                  to={nav.to}
-                  className='w-full rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white'>
-                  {nav.name}
-                </NavLink>
-              ))}
-              <div className='flex justify-center gap-2'>
-                <DropDown width={true} />
-                <select
-                  id='select2'
-                  value={language}
-                  onChange={handleLang}
-                  className='bg-gray-900 rounded-md px-3 py-2 text-sm text-center font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
-                  <option
-                    id='English2'
-                    value='en'>
-                    English
-                  </option>
-                  <option
-                    id='Español2'
-                    value='es'>
-                    Spanish
-                  </option>
-                </select>
-              </div>
+      </nav>
+      {mobileMenuOpen && (
+        <div
+          className={`block md:hidden fixed w-full animate-slowTop bg-gray-800 text-white  py-2 sm:text-lg md:text-xl lg:text-2xl ${
+            mobileMenuOpen ? 'animate-slowBottom' : 'animate-slowTop'
+          }`}>
+          <div className='flex flex-col justify-center text-center gap-1 '>
+            {navItems.map((nav, index) => (
+              <NavLink
+                key={index}
+                to={nav.to}
+                className='w-full rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white'>
+                {nav.name}
+              </NavLink>
+            ))}
+            <div className='flex justify-center gap-2'>
+              <DropDown width={true} />
+              <select
+                id='select2'
+                value={language}
+                onChange={handleLang}
+                className='bg-gray-900 rounded-md px-3 py-2 text-sm text-center font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
+                <option
+                  id='English2'
+                  value='en'>
+                  English
+                </option>
+                <option
+                  id='Español2'
+                  value='es'>
+                  Spanish
+                </option>
+              </select>
             </div>
           </div>
-        )}
-      </nav>
+        </div>
+      )}
     </>
   );
 };

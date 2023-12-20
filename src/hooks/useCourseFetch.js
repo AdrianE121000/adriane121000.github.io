@@ -5,7 +5,7 @@ export function useCourseFetch(key) {
   const [error, setError] = useState();
 
   useEffect(() => {
-    fetch(`https://udecors.azurewebsites.net/courses/${key}`)
+    fetch(`https://API_URL/courses/${key}`)
       .then((res) => res.json())
       .then((json) => {
         setCourse(json);
@@ -13,9 +13,9 @@ export function useCourseFetch(key) {
       .catch((error) => {
         setError(error);
       });
-  }, []);
+  }, [key]);
 
-  const imgCourse = `https://udecors.azurewebsites.net/image/${course.image_id}`;
+  const imgCourse = `https://API_URL/image/${course.image_id}`;
 
   return { course, error, imgCourse };
 }

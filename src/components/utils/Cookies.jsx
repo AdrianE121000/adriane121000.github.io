@@ -30,7 +30,7 @@ const Cookies = () => {
     <>
       <div
         className={`block bg-gray-300 p-5 w-full fixed bottom-0 text-center ${isActive}`}>
-        <h3 className='text-xs mb-3'>Cookies</h3>
+        <h3 className='text-3xl mb-3'>Cookies</h3>
         <p className='mb-3'>
           We use third-party cookies to obtain statistical data on the
           navigation of our users and improve our services. If you accept or

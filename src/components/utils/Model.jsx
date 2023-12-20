@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { CoursesContext } from '../../context/CoursesContext';
 import { LanguageContext } from '../../context/LanguageContext';
-import Cookies from '../privacy/Cookies';
+import Cookies from '../utils/Cookies';
 import CoursesCard from '../cards/CoursesCard';
 
 const Model = () => {

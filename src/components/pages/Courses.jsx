@@ -5,7 +5,7 @@ import { sortByTime } from '../../logic/sortCoursesByTime';
 import { useForm } from 'react-hook-form';
 import { FiSearch } from 'react-icons/fi';
 import { LanguageContext } from '../../context/LanguageContext';
-import Cookies from '../privacy/Cookies';
+import Cookies from '../utils/Cookies';
 import { CoursesSkeleton } from '../utils/skeletons';
 
 const Courses = () => {
@@ -34,7 +34,6 @@ const Courses = () => {
 
   return (
     <>
-      <Cookies />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='flex items-center flex-col'>
@@ -67,7 +66,10 @@ const Courses = () => {
       ) : courses.length === 0 ? (
         <CoursesSkeleton />
       ) : (
-        <CoursesCard courses={sortedCourses} />
+        <>
+          <Cookies />
+          <CoursesCard courses={sortedCourses} />
+        </>
       )}
     </>
   );

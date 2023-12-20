@@ -1,4 +1,4 @@
-import NavBar from './components/pages/NavBar';
+import NavBar from './components/utils/NavBar';
 import { CoursesProvider } from './context/CoursesContext';
 import Rutas from './routes/Rutas';
 function App() {
