@@ -1,10 +1,10 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Courses from '../components/Courses';
-import Model from '../components/Model';
-import Home from '../components/Home';
-import Course from '../components/Course';
-import Donation from '../components/Donation';
-import PrivacyPolicy from '../components/PrivacyPolicy';
+import Courses from '../components/pages/Courses';
+import Model from '../components/utils/Model';
+import Home from '../components/pages/Home';
+import Course from '../components/pages/Course';
+import Donation from '../components/pages/Donation';
+import PrivacyPolicy from '../components/privacy/PrivacyPolicy';
 
 const Rutas = () => {
   return (

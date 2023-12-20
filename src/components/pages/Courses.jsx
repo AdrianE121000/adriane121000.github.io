@@ -1,12 +1,12 @@
 import { useContext, useState, useRef } from 'react';
-import { CoursesContext } from '../context/CoursesContext';
-import CoursesCard from './CoursesCard';
-import { sortByTime } from '../logic/sortCoursesByTime';
+import { CoursesContext } from '../../context/CoursesContext';
+import CoursesCard from '../cards/CoursesCard';
+import { sortByTime } from '../../logic/sortCoursesByTime';
 import { useForm } from 'react-hook-form';
 import { FiSearch } from 'react-icons/fi';
-import { LanguageContext } from '../context/LanguageContext';
-import Cookies from './Cookies';
-import { CoursesSkeleton } from './skeletons';
+import { LanguageContext } from '../../context/LanguageContext';
+import Cookies from '../privacy/Cookies';
+import { CoursesSkeleton } from '../utils/skeletons';
 
 const Courses = () => {
   const { courses } = useContext(CoursesContext);

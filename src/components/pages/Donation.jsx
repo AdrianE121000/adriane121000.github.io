@@ -1,11 +1,11 @@
 import { useContext } from 'react';
-import { LanguageContext } from '../context/LanguageContext';
+import { LanguageContext } from '../../context/LanguageContext';
 import { FaBitcoin, FaPaypal } from 'react-icons/fa';
 import { SiTether, SiEthereum, SiDogecoin, SiBinance } from 'react-icons/si';
 import { FiClipboard } from 'react-icons/fi';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Toaster, toast } from 'sonner';
-import Cookies from './Cookies';
+import Cookies from '../privacy/Cookies';
 
 const Donation = () => {
   const { translations } = useContext(LanguageContext);

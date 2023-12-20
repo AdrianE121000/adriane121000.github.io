@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import DropDown from './DropDown';
+import DropDown from '../utils/DropDown';
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/logo.ico';
+import logo from '../../assets/logo.ico';
 import { useContext } from 'react';
-import { LanguageContext } from '../context/LanguageContext';
-import { BarIcon, XMark } from './Icons';
+import { LanguageContext } from '../../context/LanguageContext';
+import { BarIcon, XMark } from '../utils/Icons';
 
 const NavBar = () => {
   const { language, translations, handleLang } = useContext(LanguageContext);

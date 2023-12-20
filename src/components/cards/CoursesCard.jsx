@@ -1,10 +1,10 @@
 import { useContext, useState } from 'react';
-import { LanguageContext } from '../context/LanguageContext';
+import { LanguageContext } from '../../context/LanguageContext';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.ico';
-import Pagination from './Pagination';
-import { useCourseTimeCalculate } from '../hooks/useCourseTimeCalculate';
-import Footer from './Footer';
+import logo from '../../assets/logo.ico';
+import Pagination from '../utils/Pagination';
+import { useCourseTimeCalculate } from '../../hooks/useCourseTimeCalculate';
+import Footer from '../pages/Footer';
 
 const CoursesCard = ({ courses }) => {
   const { translations } = useContext(LanguageContext);

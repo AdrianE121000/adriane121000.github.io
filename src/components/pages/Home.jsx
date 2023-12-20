@@ -1,4 +1,4 @@
-import Cookies from './Cookies';
+import Cookies from '../privacy/Cookies';
 
 const Home = () => {
   return (

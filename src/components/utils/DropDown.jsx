@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { LanguageContext } from '../context/LanguageContext';
+import { LanguageContext } from '../../context/LanguageContext';
 
 const DropDown = ({ width }) => {
   const [isOpen, setIsOpen] = useState(false);

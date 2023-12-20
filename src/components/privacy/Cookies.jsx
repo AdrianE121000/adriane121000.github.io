@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { isCookiesAccepted } from '../logic/cookies';
+import { isCookiesAccepted } from '../../logic/cookies';
 
 const Cookies = () => {
   const [isActive, setIsActive] = useState(

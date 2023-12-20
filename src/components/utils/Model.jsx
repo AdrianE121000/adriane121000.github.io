@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { CoursesContext } from '../context/CoursesContext';
-import { LanguageContext } from '../context/LanguageContext';
-import Cookies from './Cookies';
-import CoursesCard from './CoursesCard';
+import { CoursesContext } from '../../context/CoursesContext';
+import { LanguageContext } from '../../context/LanguageContext';
+import Cookies from '../privacy/Cookies';
+import CoursesCard from '../cards/CoursesCard';
 
 const Model = () => {
   const { category } = useParams();

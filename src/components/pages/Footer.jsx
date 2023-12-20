@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { LanguageContext } from '../context/LanguageContext';
+import { LanguageContext } from '../../context/LanguageContext';
 import { FaTelegramPlane } from 'react-icons/fa';
-import logo from '../assets/logo.ico';
+import logo from '../../assets/logo.ico';
 
 const Footer = () => {
   const { translations } = useContext(LanguageContext);

@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { LanguageContext } from '../context/LanguageContext';
-import { useCourseFetch } from '../hooks/useCourseFetch';
-import { useCourseTimeCalculate } from '../hooks/useCourseTimeCalculate';
-import Cookies from './Cookies';
-import { CourseSkeleton } from './skeletons';
+import { LanguageContext } from '../../context/LanguageContext';
+import { useCourseFetch } from '../../hooks/useCourseFetch';
+import { useCourseTimeCalculate } from '../../hooks/useCourseTimeCalculate';
+import Cookies from '../privacy/Cookies';
+import { CourseSkeleton } from '../utils/skeletons';
 
 const Course = () => {
   const { translations } = useContext(LanguageContext);
