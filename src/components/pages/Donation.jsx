@@ -61,7 +61,9 @@ const Donation = () => {
                 className='mx-2 p-1 border border-gray-600 rounded '
               />
               <CopyToClipboard text={addresses.btc}>
-                <button className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
+                <button
+                  onClick={() => toast.success(`Copied: ${addresses.btc}`)}
+                  className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
                   <FiClipboard />
                 </button>
               </CopyToClipboard>
@@ -79,7 +81,9 @@ const Donation = () => {
                 className='mx-2 p-1 border border-gray-600 rounded '
               />
               <CopyToClipboard text={addresses.usdt}>
-                <button className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
+                <button
+                  onClick={() => toast.success(`Copied: ${addresses.usdt}`)}
+                  className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
                   <FiClipboard />
                 </button>
               </CopyToClipboard>
@@ -97,7 +101,9 @@ const Donation = () => {
                 className='mx-2 p-1 border border-gray-600 rounded '
               />
               <CopyToClipboard text={addresses.eth}>
-                <button className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
+                <button
+                  onClick={() => toast.success(`Copied: ${addresses.eth}`)}
+                  className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
                   <FiClipboard />
                 </button>
               </CopyToClipboard>
@@ -115,7 +121,9 @@ const Donation = () => {
                 className='mx-2 p-1 border border-gray-600 rounded '
               />
               <CopyToClipboard text={addresses.doge}>
-                <button className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
+                <button
+                  onClick={() => toast.success(`Copied: ${addresses.doge}`)}
+                  className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
                   <FiClipboard />
                 </button>
               </CopyToClipboard>
@@ -133,7 +141,9 @@ const Donation = () => {
                 className='mx-2 p-1 border border-gray-600 rounded '
               />
               <CopyToClipboard text={addresses.bnb}>
-                <button className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
+                <button
+                  onClick={() => toast.success(`Copied: ${addresses.bnb}`)}
+                  className='flex items-center bg-blue-500 text-white border-none rounded py-1 px-2 cursor-pointer'>
                   <FiClipboard />
                 </button>
               </CopyToClipboard>
