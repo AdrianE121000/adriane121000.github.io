@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { isCookiesAccepted } from '../logic/cookies';
 
 const Cookies = () => {
   const [isActive, setIsActive] = useState(
@@ -7,14 +8,7 @@ const Cookies = () => {
   );
   const navigate = useNavigate();
 
-  if (localStorage.getItem('cookies-accepted') === 'true') {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-6VMTN22R74');
-  }
+  isCookiesAccepted();
 
   function acceptCookies() {
     setIsActive('hidden');
