@@ -3,24 +3,25 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { LanguageContext } from '../context/LanguageContext';
 
-const DropDown = () => {
+const DropDown = ({ width }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { translations } = useContext(LanguageContext);
 
   return (
-    <div className='relative inline-block text-left sm:text-lg md:text-xl '>
+    <div
+      className={`relative inline-block  text-left text-sm ${width ? '' : ''}`}>
       <div>
         <span className='rounded-md shadow-sm'>
           <button
             onClick={() => setIsOpen(!isOpen)}
             type='button'
-            className='inline-flex sm:text-lg md:text-xl justify-center w-full rounded-md  bg-gray-800  py-1 text-white '
+            className='inline-flex text-sm w-full justify-center rounded-md px-3 py-2 bg-gray-900 text-white '
             id='options-menu'
             aria-expanded='true'
             aria-haspopup='true'>
             {translations.category}
             <svg
-              className='-mr-1 ml-2 h-5 w-5'
+              className='-mr-1 ml-2 h-3 w-3'
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 20 20'
               fill='currentColor'

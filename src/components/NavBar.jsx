@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.ico';
 import { useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
+import { BarIcon, XMark } from './Icons';
 
 const NavBar = () => {
   const { language, translations, handleLang } = useContext(LanguageContext);
@@ -13,11 +14,26 @@ const NavBar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const navItems = [
+    {
+      name: translations.home,
+      to: '/',
+    },
+    {
+      name: translations.all,
+      to: '/courses',
+    },
+    {
+      name: 'Donation',
+      to: '/donation',
+    },
+  ];
+
   return (
     <>
       <nav className='bg-gray-800 text-white fixed z-50 w-full top-0 p-4  sm:text-lg md:text-xl '>
-        <div className='flex justify-between items-center'>
-          <div className='flex items-center'>
+        <div className='relative flex h-8 items-center justify-between'>
+          <div className='flex flex-shrink-0 items-center'>
             <img
               src={logo}
               alt='Logo'
@@ -26,28 +42,21 @@ const NavBar = () => {
             <h1 className='ml-3 font-bold'>learnDeals</h1>
           </div>
 
-          <div className=' items-center hidden md:block'>
-            <NavLink
-              to='/'
-              className='mx-2 outline-none'>
-              {translations.home}
-            </NavLink>
-            <NavLink
-              to='/courses'
-              className='mx-2 outline-none'>
-              {translations.all}
-            </NavLink>
-            <NavLink
-              to='/donation'
-              className='mx-2 outline-none'>
-              donation
-            </NavLink>
-            <DropDown />
+          <div className=' hidden space-x-4 sm:ml-6 md:block'>
+            {navItems.map((nav, index) => (
+              <NavLink
+                key={index}
+                to={nav.to}
+                className='rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white '>
+                {nav.name}
+              </NavLink>
+            ))}
+            <DropDown width={false} />
             <select
               id='select'
               value={language}
               onChange={handleLang}
-              className='rounded-md  bg-gray-800 px-2 py-1 mx-2 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
+              className='bg-gray-900 rounded-md px-3 py-2 text-sm font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
               <option
                 id='English'
                 value='en'>
@@ -61,59 +70,42 @@ const NavBar = () => {
             </select>
           </div>
           <div></div>
-          <div className='block md:hidden'>
+          <div className='flex items-center md:hidden'>
             <button onClick={handleMobileMenuClick}>
-              <svg
-                className='h-6 w-6'
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'>
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M4 6h16M4 12h16m-7 6h7'
-                />
-              </svg>
+              {mobileMenuOpen ? <XMark /> : <BarIcon />}
             </button>
           </div>
         </div>
         {mobileMenuOpen && (
-          <div className='block md:hidden bg-gray-800 text-white  p-4 sm:text-lg md:text-xl lg:text-2xl '>
-            <div className='flex flex-col items-start gap-2'>
-              <NavLink
-                to='/'
-                className='no-underline'>
-                {translations.home}
-              </NavLink>
-              <NavLink
-                to='/courses'
-                className='no-underline'>
-                {translations.all}
-              </NavLink>
-              <NavLink
-                to='/donation'
-                className='no-underline'>
-                donation
-              </NavLink>
-              <DropDown />
-              <select
-                id='select2'
-                value={language}
-                onChange={handleLang}
-                className='rounded-lg px-0 bg-gray-800 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
-                <option
-                  id='English2'
-                  value='en'>
-                  English
-                </option>
-                <option
-                  id='Español2'
-                  value='es'>
-                  Spanish
-                </option>
-              </select>
+          <div className='block md:hidden bg-gray-800 text-white  py-2 sm:text-lg md:text-xl lg:text-2xl '>
+            <div className='flex flex-col justify-center text-center gap-1 '>
+              {navItems.map((nav, index) => (
+                <NavLink
+                  key={index}
+                  to={nav.to}
+                  className='w-full rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white'>
+                  {nav.name}
+                </NavLink>
+              ))}
+              <div className='flex justify-center gap-2'>
+                <DropDown width={true} />
+                <select
+                  id='select2'
+                  value={language}
+                  onChange={handleLang}
+                  className='bg-gray-900 rounded-md px-3 py-2 text-sm text-center font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
+                  <option
+                    id='English2'
+                    value='en'>
+                    English
+                  </option>
+                  <option
+                    id='Español2'
+                    value='es'>
+                    Spanish
+                  </option>
+                </select>
+              </div>
             </div>
           </div>
         )}
