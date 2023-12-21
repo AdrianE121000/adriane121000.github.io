@@ -1,21 +1,27 @@
 import { useEffect, useState } from 'react';
+import img from '../assets/logo.ico';
+import { useRef } from 'react';
 
 export function useCourseFetch(key) {
   const [course, setCourse] = useState({});
   const [error, setError] = useState();
+  const loading = useRef(true);
 
   useEffect(() => {
-    fetch(`https://API_URL/courses/${key}`)
-      .then((res) => res.json())
-      .then((json) => {
-        setCourse(json);
-      })
-      .catch((error) => {
-        setError(error);
-      });
+    setTimeout(() => {
+      fetch(`http://localhost:5173/learnDeals/course.json`)
+        .then((res) => res.json())
+        .then((json) => {
+          setCourse(json.course);
+        })
+        .catch((error) => {
+          setError(error);
+        })
+        .finally(() => (loading.current = false));
+    }, 3000);
   }, [key]);
 
-  const imgCourse = `https://API_URL/image/${course.image_id}`;
+  const imgCourse = img;
 
-  return { course, error, imgCourse };
+  return { course, error, imgCourse, loading };
 }
