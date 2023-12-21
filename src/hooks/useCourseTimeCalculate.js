@@ -45,6 +45,8 @@ export function useCourseTimeCalculate() {
       ? (result = `${courseTime.days} ${translations.day}`)
       : courseTime.days === 1
       ? (result = `${courseTime.days} ${translations.days}`)
+      : courseTime.hours === 1
+      ? (result = `${courseTime.hours} ${translations.hour}`)
       : courseTime.hours > 0
       ? (result = `${courseTime.hours} ${translations.hours}`)
       : courseTime.min > 0
