@@ -21,7 +21,7 @@ const CoursesCard = ({ courses }) => {
   return (
     <>
       <div className='container mx-auto px-4 mt-5'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+        <div className='hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-4'>
           {courses
             .map((curso, index) => (
               <div
@@ -43,6 +43,36 @@ const CoursesCard = ({ courses }) => {
                     {curso.category}
                   </div>
                   <div className='text-sm py-1'>
+                    {translations.fecha}:{' '}
+                    {calculateCourseTime(curso.last_update_date)}
+                  </div>
+                </div>
+              </div>
+            ))
+            .slice(firstIndex, lastIndext)}
+        </div>
+        <div className='flex flex-col md:hidden gap-2'>
+          {courses
+            .map((curso, index) => (
+              <div
+                className='bg-white pt-2 pl-2 pb-2 shadow-md rounded-md flex flex-row cursor-pointer hover:shadow-2xl'
+                key={index}
+                onClick={() => navigate(`/course/${curso.key}`)}>
+                <div className='w-1/3'>
+                  <img
+                    className='w-full h-full  rounded-t-md '
+                    src={logo}
+                    alt='imageCourse'
+                  />
+                </div>
+                <div className='pl-2 w-2/3'>
+                  <div className='text-md font-bold mb-1 line-clamp-3'>
+                    {curso.name}
+                  </div>
+                  <div className='text-blue-600 uppercase font-semibold text-sm hover:cursor-pointer'>
+                    {curso.category}
+                  </div>
+                  <div className='text-sm py-0'>
                     {translations.fecha}:{' '}
                     {calculateCourseTime(curso.last_update_date)}
                   </div>

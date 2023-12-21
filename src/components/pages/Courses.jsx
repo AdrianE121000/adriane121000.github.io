@@ -5,7 +5,7 @@ import { sortByTime } from '../../logic/sortCoursesByTime';
 import { useForm } from 'react-hook-form';
 import { LanguageContext } from '../../context/LanguageContext';
 import Cookies from '../utils/Cookies';
-import { CoursesSkeleton } from '../utils/skeletons';
+import { CourseMobileSkeleton, CoursesSkeleton } from '../utils/skeletons';
 import { useEffect } from 'react';
 import Form from '../utils/Form';
 import ErrorMessage from '../utils/ErrorMessage';
@@ -49,7 +49,14 @@ const Courses = () => {
       {result.length === 0 && isFiltered.current === true ? (
         <ErrorMessage text={translations.noSearch} />
       ) : loading.current ? (
-        <CoursesSkeleton />
+        <>
+          <div className='hidden md:block'>
+            <CoursesSkeleton />
+          </div>
+          <div className='block md:hidden'>
+            <CourseMobileSkeleton />
+          </div>
+        </>
       ) : error != undefined ? (
         <ErrorMessage text={translations.noFetch} />
       ) : (
