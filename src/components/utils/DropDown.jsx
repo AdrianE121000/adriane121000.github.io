@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { LanguageContext } from '../../context/LanguageContext';
+import { IconDropDown } from './Icons';
 
 const DropDown = ({ width }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,18 +21,7 @@ const DropDown = ({ width }) => {
             aria-expanded='true'
             aria-haspopup='true'>
             {translations.category}
-            <svg
-              className='-mr-1 ml-2 h-3 w-3'
-              xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 20 20'
-              fill='currentColor'
-              aria-hidden='true'>
-              <path
-                fillRule='evenodd'
-                d='M10 19a1 1 0 01-.707-.293l-7-7a1 1 0 111.414-1.414L10 16.586l6.293-6.293a1 1 0 111.414 1.414l-7 7A1 1 0 0110 19z'
-                clipRule='evenodd'
-              />
-            </svg>
+            <IconDropDown />
           </button>
         </span>
       </div>
