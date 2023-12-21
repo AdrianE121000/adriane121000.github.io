@@ -9,7 +9,7 @@ export function useCourseFetch(key) {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch(`http://localhost:5173/learnDeals/course.json`)
+      fetch(`https://adriane121000.github.io/learnDeals/course.json`)
         .then((res) => res.json())
         .then((json) => {
           setCourse(json.course);

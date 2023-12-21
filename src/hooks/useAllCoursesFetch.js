@@ -12,7 +12,7 @@ export function useAllCoursesFetch() {
     loading.current = true;
     if (fetchDone) {
       setTimeout(() => {
-        fetch('http://localhost:5173/learnDeals/courses.json')
+        fetch('https://adriane121000.github.io/learnDeals/courses.json')
           .then((res) => res.json())
           .then((json) => {
             setCourses(json.courses);
