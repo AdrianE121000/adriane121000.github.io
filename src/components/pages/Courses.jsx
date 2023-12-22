@@ -72,6 +72,14 @@ const Courses = () => {
               content='All Courses of the web site.'
             />
             <meta
+              property='og:title'
+              content='learnDeals | Courses'
+            />
+            <meta
+              property='og:description'
+              content='All Courses of the web site.'
+            />
+            <meta
               property='og:image'
               content='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
             />

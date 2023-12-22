@@ -34,6 +34,14 @@ const Course = () => {
               content={`Course ${course.name} from learnDeals`}
             />
             <meta
+              property='og:title'
+              content={`learnDeals | Course | {course.name}`}
+            />
+            <meta
+              property='og:description'
+              content={`Course ${course.name} from learnDeals`}
+            />
+            <meta
               property='og:image'
               content='https://udecors.azurewebsites.net/image/400'
             />

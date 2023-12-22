@@ -30,6 +30,14 @@ const Donation = () => {
           content='Buy me a coffe'
         />
         <meta
+          property='og:title'
+          content='learnDeals | Donation'
+        />
+        <meta
+          property='og:description'
+          content='Buy me a coffe'
+        />
+        <meta
           property='og:image'
           content='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
         />
