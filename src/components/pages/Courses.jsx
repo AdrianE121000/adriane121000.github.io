@@ -9,6 +9,7 @@ import { CourseMobileSkeleton, CoursesSkeleton } from '../utils/skeletons';
 import { useEffect } from 'react';
 import Form from '../utils/Form';
 import ErrorMessage from '../utils/ErrorMessage';
+import { Helmet } from 'react-helmet';
 
 const Courses = () => {
   const { courses, error, loading, setFetchDone } = useContext(CoursesContext);
@@ -40,6 +41,9 @@ const Courses = () => {
 
   return (
     <>
+      <Helmet>
+        <title>learnDeals | Courses</title>
+      </Helmet>
       <Form
         handleSubmit={handleSubmit}
         register={register}
@@ -61,6 +65,17 @@ const Courses = () => {
         <ErrorMessage text={translations.noFetch} />
       ) : (
         <>
+          <Helmet>
+            <title>learnDeals | Courses</title>
+            <meta
+              name='description'
+              content='All Courses of the web site.'
+            />
+            <meta
+              property='og:image'
+              content='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
+            />
+          </Helmet>
           <Cookies />
           <CoursesCard courses={sortedCourses} />
         </>

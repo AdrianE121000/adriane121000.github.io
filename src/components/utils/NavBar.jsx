@@ -5,10 +5,12 @@ import logo from '../../assets/logo.ico';
 import { useContext } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
 import { BarIcon, XMark } from '../utils/Icons';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
   const { language, translations, handleLang } = useContext(LanguageContext);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleMobileMenuClick = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -23,13 +25,19 @@ const NavBar = () => {
       name: translations.all,
       to: '/courses',
     },
+    {
+      name: 'Donation',
+      to: '/donation',
+    },
   ];
 
   return (
     <>
       <nav className='bg-gray-800 text-white fixed z-50 w-full top-0 p-4  sm:text-lg md:text-xl '>
         <div className='relative flex h-8 items-center justify-between'>
-          <div className='flex flex-shrink-0 items-center'>
+          <div
+            className='flex flex-shrink-0 items-center cursor-pointer'
+            onClick={() => navigate('/')}>
             <img
               src={logo}
               alt='Logo'

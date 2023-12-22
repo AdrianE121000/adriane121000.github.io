@@ -7,6 +7,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Toaster, toast } from 'sonner';
 import Cookies from '../utils/Cookies';
 import Footer from '../utils/Footer';
+import { Helmet } from 'react-helmet';
 
 const Donation = () => {
   const { translations } = useContext(LanguageContext);
@@ -22,6 +23,17 @@ const Donation = () => {
 
   return (
     <>
+      <Helmet>
+        <title>learnDeals | Donation</title>
+        <meta
+          name='description'
+          content='Buy me a coffe'
+        />
+        <meta
+          property='og:image'
+          content='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
+        />
+      </Helmet>
       <Cookies />
       <Toaster richColors />
       <div className='container mx-auto px-4 mt-16'>
