@@ -35,7 +35,7 @@ const Course = () => {
             />
             <meta
               property='og:title'
-              content={`learnDeals | Course | {course.name}`}
+              content={`learnDeals | Course | ${course.name}`}
             />
             <meta
               property='og:description'
