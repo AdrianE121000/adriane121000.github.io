@@ -5,7 +5,7 @@ import { useCourseFetch } from '../../hooks/useCourseFetch';
 import { CourseSkeleton } from '../utils/skeletons';
 import CourseCard from '../cards/CourseCard';
 import ErrorMessage from '../utils/ErrorMessage';
-import { Helmet } from 'react-helmet';
+import SEO from '@americanexpress/react-seo';
 
 const Course = () => {
   const { translations } = useContext(LanguageContext);
@@ -18,34 +18,20 @@ const Course = () => {
     <>
       {loading.current ? (
         <>
-          <Helmet>
-            <title>loading...</title>
-          </Helmet>
           <CourseSkeleton />
         </>
       ) : error != undefined ? (
         <ErrorMessage text={translations.noFetch2} />
       ) : (
         <>
-          <Helmet>
-            <title>learnDeals | Course | {course.name}</title>
-            <meta
-              name='description'
-              content={`Course ${course.name} from learnDeals`}
-            />
-            <meta
-              property='og:title'
-              content={`learnDeals | Course | ${course.name}`}
-            />
-            <meta
-              property='og:description'
-              content={`Course ${course.name} from learnDeals`}
-            />
-            <meta
-              property='og:image'
-              content='https://udecors.azurewebsites.net/image/400'
-            />
-          </Helmet>
+          <SEO
+            title={`learnDeals | Course | ${course.name}`}
+            description={`Course: ${course.name} from learnDeals`}
+            siteUrl='https://adriane121000.github.io/learnDeals/course/'
+            image={{
+              src: 'https://udecors.azurewebsites.net/image/400',
+            }}
+          />
           <CourseCard
             course={course}
             imgCourse={imgCourse}
