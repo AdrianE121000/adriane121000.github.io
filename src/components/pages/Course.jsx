@@ -5,7 +5,30 @@ import { useCourseFetch } from '../../hooks/useCourseFetch';
 import { CourseSkeleton } from '../utils/skeletons';
 import CourseCard from '../cards/CourseCard';
 import ErrorMessage from '../utils/ErrorMessage';
-import SEO from '@americanexpress/react-seo';
+import { SEO } from '../utils/SEO';
+
+const keywords = [
+  'online courses',
+  'discounted courses',
+  'programming courses',
+  'web development',
+  'remote learning',
+  'digital skills',
+  'e-learning',
+  'technology education',
+  'software development',
+  'IT certification',
+  'cursos en línea',
+  'cursos con descuento',
+  'cursos de programación',
+  'desarrollo web',
+  'aprendizaje remoto',
+  'habilidades digitales',
+  'educación en línea',
+  'tecnología educativa',
+  'desarrollo de software',
+  'certificación en tecnologías de la información',
+];
 
 const Course = () => {
   const { translations } = useContext(LanguageContext);
@@ -26,11 +49,9 @@ const Course = () => {
         <>
           <SEO
             title={`learnDeals | Course | ${course.name}`}
-            description={`Course: ${course.name} from learnDeals`}
-            siteUrl='https://adriane121000.github.io/learnDeals/course/'
-            image={{
-              src: 'https://udecors.azurewebsites.net/image/400',
-            }}
+            description={`Course: ${course.name}`}
+            image={imgCourse}
+            keywords={keywords}
           />
           <CourseCard
             course={course}

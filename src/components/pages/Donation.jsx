@@ -7,7 +7,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Toaster, toast } from 'sonner';
 import Cookies from '../utils/Cookies';
 import Footer from '../utils/Footer';
-import SEO from '@americanexpress/react-seo';
+import { SEO } from '../utils/SEO';
 
 const Donation = () => {
   const { translations } = useContext(LanguageContext);
@@ -25,11 +25,8 @@ const Donation = () => {
     <>
       <SEO
         title='learnDeals | Donation'
-        description='Buy me a coffe.'
-        siteUrl='https://adriane121000.github.io/learnDeals/donation'
-        image={{
-          src: 'https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg',
-        }}
+        description='Buy me a coffe'
+        image='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
       />
       <Cookies />
       <Toaster richColors />
