@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import Cookies from '../utils/Cookies';
 import Footer from '../utils/Footer';
-import SEO from '@americanexpress/react-seo';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const programmingLanguages = [
     'JavaScript',
     'Python',
@@ -33,14 +35,6 @@ const Home = () => {
 
   return (
     <>
-      <SEO
-        title='learnDeals'
-        description='A web site for free online courses.'
-        siteUrl='https://adriane121000.github.io/learnDeals'
-        image={{
-          src: 'https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg',
-        }}
-      />
       <div>
         {/* Sección de introducción o encabezado */}
         <section className='bg-gray-100 p-8'>
@@ -48,7 +42,7 @@ const Home = () => {
             <h1 className='text-5xl font-bold mb-4'>
               Descubre tu próximo curso online
             </h1>
-            <p className='text-lg mb-8'>
+            <p className='text-2xl mb-8'>
               Explora una variedad de cursos para potenciar tu aprendizaje.
             </p>
             {/* Formulario de búsqueda o componente de filtrado */}
@@ -66,9 +60,9 @@ const Home = () => {
               {programmingLanguages.map((language, index) => (
                 <div
                   key={index}
-                  className='border text-center border-gray-200 p-4 cursor-pointer'
+                  className='bg-gray-800 text-white rounded-lg  text-center p-4 cursor-pointer'
                   onClick={() => handleLanguageClick(language)}>
-                  <h3 className='text-lg font-bold'>{language}</h3>
+                  <h3 className='text-lg'>{language}</h3>
                   {/* Puedes agregar más información sobre cada lenguaje si lo deseas */}
                 </div>
               ))}
@@ -86,9 +80,9 @@ const Home = () => {
               {areasOfInterest.map((area, index) => (
                 <div
                   key={index}
-                  className='border border-gray-200 p-4 cursor-pointer'
+                  className='bg-gray-800 text-white rounded-lg text-center border border-gray-200 p-4 cursor-pointer'
                   onClick={() => handleAreaClick(area.slug)}>
-                  <h3 className='text-lg font-bold'>{area.title}</h3>
+                  <h3 className='text-lg'>{area.title}</h3>
                   {/* Puedes agregar más información sobre cada área si lo deseas */}
                 </div>
               ))}
@@ -106,7 +100,9 @@ const Home = () => {
               Encuentra el curso perfecto para ti y lleva tus habilidades al
               siguiente nivel.
             </p>
-            <button className='bg-gray-900 text-white rounded-md w-52 border text-center border-gray-200 p-4 cursor-pointer'>
+            <button
+              onClick={() => navigate('/courses')}
+              className='bg-gray-800 text-white rounded-lg w-52 border text-center border-gray-200 p-4 cursor-pointer'>
               Start
             </button>
           </div>
