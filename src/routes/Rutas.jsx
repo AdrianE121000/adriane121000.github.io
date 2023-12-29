@@ -5,6 +5,7 @@ import Home from '../components/pages/Home';
 import Course from '../components/pages/Course';
 import Donation from '../components/pages/Donation';
 import PrivacyPolicy from '../components/pages/PrivacyPolicy';
+import Explore from '../components/pages/Explore';
 
 const Rutas = () => {
   return (
@@ -21,6 +22,10 @@ const Rutas = () => {
         <Route
           path='/cat/:category'
           element={<Model />}
+        />
+        <Route
+          path='/explore'
+          element={<Explore />}
         />
         <Route
           path='/course/:key'
