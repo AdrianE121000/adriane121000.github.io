@@ -3,7 +3,14 @@ import { LanguageContext } from '../../context/LanguageContext';
 import { FiSearch } from 'react-icons/fi';
 import { useState } from 'react';
 
-function FilterForm({ handleSubmit, register, errors, onSubmit }) {
+function FilterForm({
+  handleSubmit,
+  register,
+  onSubmit,
+  setFilter,
+  setLanguage,
+  errors,
+}) {
   const { translations } = useContext(LanguageContext);
 
   const [selectedCheckbox, setSelectedCheckbox] = useState('courses');
@@ -20,47 +27,58 @@ function FilterForm({ handleSubmit, register, errors, onSubmit }) {
           <div className='border flex border-black rounded-lg px-2'>
             <input
               type='checkbox'
-              {...register('courses')}
-              value='courses'
-              name='courses'
-              className='mr-2'
-              checked={selectedCheckbox === 'courses'}
-              onChange={() => handleCheckboxChange('courses')}
-            />
-            <label>Courses</label>
-          </div>
-          <div className='border flex border-black rounded-lg px-2'>
-            <input
-              type='checkbox'
-              {...register('tutorials')}
+              {...register('option')}
+              id='tutorials'
               value='tutorials'
-              name='tutorials'
               className='mr-2'
               checked={selectedCheckbox === 'tutorials'}
-              onChange={() => handleCheckboxChange('tutorials')}
+              onChange={() => {
+                handleCheckboxChange('tutorials');
+                setFilter('tutorials');
+              }}
             />
-            <label>tutoriales</label>
+            <label htmlFor='tutorials'>tutoriales</label>
           </div>
           <div className='border flex border-black rounded-lg px-2'>
             <input
               type='checkbox'
-              {...register('certifications')}
+              {...register('option')}
+              value='courses'
+              id='courses'
+              className='mr-2'
+              checked={selectedCheckbox === 'courses'}
+              onChange={() => {
+                handleCheckboxChange('courses');
+                setFilter('courses');
+              }}
+            />
+            <label htmlFor='courses'>Courses</label>
+          </div>
+          <div className='border flex border-black rounded-lg px-2'>
+            <input
+              type='checkbox'
+              {...register('option')}
               value='certifications'
-              name='certifications'
+              id='certifications'
               className='mr-2'
               checked={selectedCheckbox === 'certifications'}
-              onChange={() => handleCheckboxChange('certifications')}
+              onChange={() => {
+                handleCheckboxChange('certifications');
+                setFilter('certifications');
+              }}
             />
-            <label>Centificaciones</label>
+            <label htmlFor='certifications'>Centificaciones</label>
           </div>
         </div>
         <div className='flex justify-center items-center mb-4'>
           <select
             className='rounded-xl p-2 mr-5'
-            {...register('category')}>
-            <option value='category1'>Categoría 1</option>
-            <option value='category2'>Categoría 2</option>
-            <option value='category3'>Categoría 3</option>
+            {...register('category')}
+            onChange={(e) => setLanguage(e.target.value)}>
+            <option value='todos'>Todos</option>
+            <option value=' java '>Java</option>
+            <option value=' python '>Python</option>
+            <option value=' javascript '>Javascript</option>
           </select>
           <input
             id='search'
