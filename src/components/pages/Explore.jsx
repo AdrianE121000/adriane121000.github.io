@@ -6,15 +6,17 @@ import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import CoursesCard from '../cards/CoursesCard';
-import { CoursesSkeleton } from '../utils/skeletons';
+import { CourseMobileSkeleton, CoursesSkeleton } from '../utils/skeletons';
 import { useRef } from 'react';
 import ErrorMessage from '../utils/ErrorMessage';
 import { LanguageContext } from '../../context/LanguageContext';
+import tutorials from '../../mocks/tutorials.json';
+import certifications from '../../mocks/certifications.json';
 
 const Explore = () => {
   const { translations } = useContext(LanguageContext);
   //obtoner los cursos de la APi
-  const { courses, loading, setFetchDone } = useContext(CoursesContext);
+  const { courses, loading, setFetchDone, error } = useContext(CoursesContext);
   //crear filtro para los ckeckbox
   const [filter, setFilter] = useState('courses');
   //crear filtro para lenguage de prigramacion
@@ -32,11 +34,26 @@ const Explore = () => {
 
   useEffect(() => {
     setResult(
-      courses.filter((dato) =>
-        dato.name.toLowerCase().includes(language === 'todos' ? '' : language)
-      )
+      filter === 'courses'
+        ? courses.filter((dato) =>
+            dato.name
+              .toLowerCase()
+              .includes(language === 'todos' ? '' : language)
+          )
+        : filter === 'tutorials'
+        ? tutorials.courses.filter((dato) =>
+            dato.name
+              .toLowerCase()
+              .includes(language === 'todos' ? '' : language)
+          )
+        : certifications.courses.filter((dato) =>
+            dato.name
+              .toLowerCase()
+              .includes(language === 'todos' ? '' : language)
+          )
     );
-  }, [language, courses]);
+    isFiltered.current = true;
+  }, [language, courses, filter]);
 
   const {
     register,
@@ -47,7 +64,11 @@ const Explore = () => {
 
   const onSubmit = (event) => {
     const newResult = result.filter((dato) =>
-      dato.name.toLowerCase().includes(` ${event.search.toLowerCase()} `)
+      dato.name
+        .toLowerCase()
+        .includes(
+          ` ${event.search.toLowerCase()}` || ` ${event.search.toLowerCase()} `
+        )
     );
 
     setResult(newResult);
@@ -57,7 +78,7 @@ const Explore = () => {
 
   return (
     <>
-      <div className='bg-gray-300 mb-8 py-2'>
+      <div className='bg-gray-400 mb-8 py-2'>
         <FilterForm
           setLanguage={setLanguage}
           setFilter={setFilter}
@@ -67,15 +88,24 @@ const Explore = () => {
           onSubmit={onSubmit}
         />
       </div>
-      {result.length === 0 && isFiltered.current === true ? (
+      {loading.current ? (
+        <>
+          <div className='hidden md:block'>
+            <CoursesSkeleton />
+          </div>
+          <div className='block md:hidden'>
+            <CourseMobileSkeleton />
+          </div>
+        </>
+      ) : error !== undefined ? (
+        <ErrorMessage text={translations.noFetch} />
+      ) : result.length === 0 && isFiltered.current === true ? (
         <ErrorMessage text={translations.noSearch} />
-      ) : loading.current ? (
-        <CoursesSkeleton />
       ) : (
         <>
           {filter === 'courses' && <CoursesCard courses={sortByTime(result)} />}
-          {filter === 'tutorials' && <h1>Aqui los tutoliales</h1>}
-          {filter === 'certifications' && <h1>aqui las certificaciones</h1>}
+          {filter === 'tutorials' && <CoursesCard courses={result} />}
+          {filter === 'certifications' && <CoursesCard courses={result} />}
         </>
       )}
     </>

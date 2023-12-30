@@ -23,8 +23,8 @@ function FilterForm({
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='w-full max-w-sm mx-auto mt-4'>
-        <div className='flex items-center justify-center mb-4 gap-3 '>
-          <div className='border flex border-black rounded-lg px-2'>
+        <div className='flex items-center justify-center flex-col md:flex-row mb-4 gap-1  md:gap-3 '>
+          <div className='border flex  border-black rounded-lg px-2 w-1/2'>
             <input
               type='checkbox'
               {...register('option')}
@@ -39,7 +39,7 @@ function FilterForm({
             />
             <label htmlFor='tutorials'>tutoriales</label>
           </div>
-          <div className='border flex border-black rounded-lg px-2'>
+          <div className='border flex border-black rounded-lg px-2 w-1/2'>
             <input
               type='checkbox'
               {...register('option')}
@@ -54,7 +54,7 @@ function FilterForm({
             />
             <label htmlFor='courses'>Courses</label>
           </div>
-          <div className='border flex border-black rounded-lg px-2'>
+          <div className='border flex border-black rounded-lg px-2 w-1/2'>
             <input
               type='checkbox'
               {...register('option')}
@@ -72,7 +72,7 @@ function FilterForm({
         </div>
         <div className='flex justify-center items-center mb-4'>
           <select
-            className='rounded-xl p-2 mr-5'
+            className='rounded-xl py-1 mr-2 md:p-2 md:mr-5'
             {...register('category')}
             onChange={(e) => setLanguage(e.target.value)}>
             <option value='todos'>Todos</option>
@@ -84,7 +84,7 @@ function FilterForm({
             id='search'
             type='text'
             placeholder={translations.search}
-            className='w-60 md:w-80 lg:w-96 px-4 py-2 rounded-l-md focus:outline-none focus:ring focus:border-blue-300'
+            className='w-40 md:w-80 lg:w-96 px-4 py-2 rounded-l-md focus:outline-none focus:ring focus:border-blue-300'
             {...register('search', { required: true })}
           />
           <button
