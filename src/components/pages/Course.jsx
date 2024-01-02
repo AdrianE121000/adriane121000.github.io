@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-//import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { LanguageContext } from '../../context/LanguageContext';
 import { useCourseFetch } from '../../hooks/useCourseFetch';
 import { CourseSkeleton } from '../utils/skeletons';
@@ -33,9 +33,9 @@ const keywords = [
 const Course = () => {
   const { translations } = useContext(LanguageContext);
 
-  //const { key } = useParams();
+  const { key } = useParams();
 
-  const { course, error, imgCourse, loading } = useCourseFetch();
+  const { course, error, imgCourse, loading } = useCourseFetch(key);
 
   return (
     <>

@@ -1,13 +1,10 @@
 import FilterForm from '../utils/FilterForm';
-import { useState } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
 import { sortByTime } from '../../logic/sortCoursesByTime';
 import { CoursesContext } from '../../context/CoursesContext';
-import { useContext } from 'react';
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import CoursesCard from '../cards/CoursesCard';
 import { CourseMobileSkeleton, CoursesSkeleton } from '../utils/skeletons';
-import { useRef } from 'react';
 import ErrorMessage from '../utils/ErrorMessage';
 import { LanguageContext } from '../../context/LanguageContext';
 import tutorials from '../../mocks/tutorials.json';
@@ -19,7 +16,7 @@ const Explore = () => {
   const { courses, loading, setFetchDone, error } = useContext(CoursesContext);
   //crear filtro para los ckeckbox
   const [filter, setFilter] = useState('courses');
-  //crear filtro para lenguage de prigramacion
+  //crear filtro para lenguage de programacion
   const [language, setLanguage] = useState('todos');
   //permitir hacer el fetch
   useEffect(() => {
@@ -67,7 +64,7 @@ const Explore = () => {
       dato.name
         .toLowerCase()
         .includes(
-          ` ${event.search.toLowerCase()}` || ` ${event.search.toLowerCase()} `
+          `${event.search.toLowerCase()} ` || ` ${event.search.toLowerCase()} `
         )
     );
 
@@ -99,13 +96,11 @@ const Explore = () => {
         </>
       ) : error !== undefined ? (
         <ErrorMessage text={translations.noFetch} />
-      ) : result.length === 0 && isFiltered.current === true ? (
+      ) : result.length === 0 && isFiltered.current ? (
         <ErrorMessage text={translations.noSearch} />
       ) : (
         <>
-          {filter === 'courses' && <CoursesCard courses={sortByTime(result)} />}
-          {filter === 'tutorials' && <CoursesCard courses={result} />}
-          {filter === 'certifications' && <CoursesCard courses={result} />}
+          <CoursesCard courses={sortByTime(result)} />
         </>
       )}
     </>

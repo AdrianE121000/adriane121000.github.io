@@ -7,19 +7,19 @@ export function useAllCoursesFetch() {
   const [error, setError] = useState();
   const loading = useRef(false);
   const [fetchDone, setFetchDone] = useState(false);
+  const apiUrl = import.meta.env.VITE_API_URL;
+  console.log(apiUrl);
 
   useEffect(() => {
     loading.current = true;
     if (fetchDone) {
-      setTimeout(() => {
-        fetch('https://adriane121000.github.io/learnDeals/courses.json')
-          .then((res) => res.json())
-          .then((json) => {
-            setCourses(json.courses);
-          })
-          .catch((error) => setError(error))
-          .finally(() => (loading.current = false));
-      }, 3000);
+      fetch(`${apiUrl}/courses`)
+        .then((res) => res.json())
+        .then((json) => {
+          setCourses(json.courses);
+        })
+        .catch((error) => setError(error))
+        .finally(() => (loading.current = false));
     }
   }, [fetchDone]);
 
