@@ -24,7 +24,7 @@ function FilterForm({
         onSubmit={handleSubmit(onSubmit)}
         className='w-full max-w-sm mx-auto mt-4'>
         <div className='flex items-center justify-center flex-col md:flex-row mb-4 gap-1  md:gap-3 '>
-          <div className='border flex  border-black rounded-lg px-2 w-1/2'>
+          <div className='border flex items-center border-black rounded-lg px-2 w-1/2'>
             <input
               type='checkbox'
               {...register('option')}
@@ -39,7 +39,7 @@ function FilterForm({
             />
             <label htmlFor='tutorials'>{translations.tutorials}</label>
           </div>
-          <div className='border flex border-black rounded-lg px-2 w-1/2'>
+          <div className='border flex items-center border-black rounded-lg px-2 w-1/2'>
             <input
               type='checkbox'
               {...register('option')}
@@ -54,7 +54,7 @@ function FilterForm({
             />
             <label htmlFor='courses'>{translations.courses}</label>
           </div>
-          <div className='border flex border-black rounded-lg px-2 w-1/2'>
+          <div className='border flex items-center border-black rounded-lg px-2 w-1/2'>
             <input
               type='checkbox'
               {...register('option')}
