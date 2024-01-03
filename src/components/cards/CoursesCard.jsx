@@ -30,7 +30,7 @@ const CoursesCard = ({ courses }) => {
                 onClick={() => navigate(`/course/${curso.key}`)}>
                 <div>
                   <img
-                    className='w-full h-40 object-cover rounded-t-md mb-4'
+                    className='w-full h-auto object-cover rounded-md mb-2 hover:scale-105 transition duration-300 ease-in-out'
                     src={logo}
                     alt='imageCourse'
                   />

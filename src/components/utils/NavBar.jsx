@@ -22,7 +22,7 @@ const NavBar = () => {
       to: '/',
     },
     {
-      name: translations.all,
+      name: translations.all[0],
       to: '/courses',
     },
     {
@@ -55,7 +55,7 @@ const NavBar = () => {
                 {nav.name}
               </NavLink>
             ))}
-            <DropDown width={false} />
+            <DropDown />
             <select
               id='select'
               value={language}
@@ -91,12 +91,13 @@ const NavBar = () => {
               <NavLink
                 key={index}
                 to={nav.to}
+                onClick={handleMobileMenuClick}
                 className='w-full rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white'>
                 {nav.name}
               </NavLink>
             ))}
             <div className='flex justify-center gap-2'>
-              <DropDown width={true} />
+              <DropDown />
               <select
                 id='select2'
                 value={language}

@@ -7,14 +7,16 @@ const Footer = () => {
   const { translations } = useContext(LanguageContext);
   return (
     <>
-      <footer className='bg-gray-800 text-white py-8'>
-        <div className='container mx-auto text-left'>
-          <h3 className='text-xl font-bold mb-2 ml-2'>learnDeals</h3>
-          <img
-            src={logo}
-            alt='learnDeals image'
-            className='h-8 w-8 mb-2 ml-2'
-          />
+      <footer className='bg-gray-800 text-white py-4'>
+        <div className='container mx-auto flex md:block flex-col justify-center items-center text-left'>
+          <div className='flex flex-row md:flex-col'>
+            <h3 className='text-xl font-bold mb-2 ml-2'>learnDeals</h3>
+            <img
+              src={logo}
+              alt='learnDeals image'
+              className='h-8 w-8 mb-2 ml-2'
+            />
+          </div>
           <p className='mb-2 ml-2 text-xl'>{translations.tlChannel}</p>
           <ul className='md:flex mb-4 ml-2'>
             <li>

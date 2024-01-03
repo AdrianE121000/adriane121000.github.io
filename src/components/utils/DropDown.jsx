@@ -4,13 +4,12 @@ import { NavLink } from 'react-router-dom';
 import { LanguageContext } from '../../context/LanguageContext';
 import { IconDropDown } from './Icons';
 
-const DropDown = ({ width }) => {
+const DropDown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { translations } = useContext(LanguageContext);
 
   return (
-    <div
-      className={`relative inline-block  text-left text-sm ${width ? '' : ''}`}>
+    <div className='relative inline-block  text-left text-sm'>
       <div>
         <span className='rounded-md shadow-sm'>
           <button
