@@ -17,7 +17,7 @@ const Explore = () => {
   //crear filtro para los ckeckbox
   const [filter, setFilter] = useState('courses');
   //crear filtro para lenguage de programacion
-  const [language, setLanguage] = useState('todos');
+  const [language, setLanguage] = useState('all');
   //permitir hacer el fetch
   useEffect(() => {
     setFetchDone(true);
@@ -33,20 +33,14 @@ const Explore = () => {
     setResult(
       filter === 'courses'
         ? courses.filter((dato) =>
-            dato.name
-              .toLowerCase()
-              .includes(language === 'todos' ? '' : language)
+            dato.name.toLowerCase().includes(language === 'all' ? '' : language)
           )
         : filter === 'tutorials'
         ? tutorials.courses.filter((dato) =>
-            dato.name
-              .toLowerCase()
-              .includes(language === 'todos' ? '' : language)
+            dato.name.toLowerCase().includes(language === 'all' ? '' : language)
           )
         : certifications.courses.filter((dato) =>
-            dato.name
-              .toLowerCase()
-              .includes(language === 'todos' ? '' : language)
+            dato.name.toLowerCase().includes(language === 'all' ? '' : language)
           )
     );
     isFiltered.current = true;

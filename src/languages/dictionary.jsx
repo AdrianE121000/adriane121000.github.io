@@ -61,9 +61,8 @@ export const dictionary = {
     lenguaje: 'Idioma',
     volver: 'Volver',
     ir: 'Ir al curso',
-    intro: 'Cursos Gratis',
     join: 'Únete al Canal de Telegram',
-    all: 'Todos los Cursos',
+    all: ['Todos los Cursos', 'Todos'],
     noCourses: 'No hay cursos en esta categoría',
     noSearch: 'No se encontraron cursos para esta búsqueda',
     day: 'dias',
@@ -88,7 +87,9 @@ export const dictionary = {
     donationSubTitle:
       'Si deseas apoyar nuestro proyecto, considera hacer una donación en alguna de las siguientes criptomonedas:',
     donationThanks: '¡Gracias por tu generosa donación!',
-    copied: 'copiado',
+    courses: 'Cursos',
+    certifications: 'Certificaciones',
+    tutorials: 'Tutoriales',
   },
   en: {
     routes: [
@@ -152,9 +153,8 @@ export const dictionary = {
     lenguaje: 'Language',
     volver: 'Back',
     ir: 'Take Course',
-    intro: 'Free Courses',
     join: 'Join Telegram Chanel',
-    all: 'All Courses',
+    all: ['All Courses', 'All'],
     noCourses: 'There are no courses in this category yet',
     noSearch: 'No courses were found for this search',
     day: 'days',
@@ -179,6 +179,8 @@ export const dictionary = {
     donationSubTitle:
       'If you want to support our project, consider making a donation in one of the following cryptocurrencies:',
     donationThanks: 'Thank you for your generous donation!',
-    copied: 'copied',
+    courses: 'Courses',
+    certifications: 'Certifications',
+    tutorials: 'Tutorials',
   },
 };

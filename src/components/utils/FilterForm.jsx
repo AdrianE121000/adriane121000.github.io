@@ -37,7 +37,7 @@ function FilterForm({
                 setFilter('tutorials');
               }}
             />
-            <label htmlFor='tutorials'>tutoriales</label>
+            <label htmlFor='tutorials'>{translations.tutorials}</label>
           </div>
           <div className='border flex border-black rounded-lg px-2 w-1/2'>
             <input
@@ -52,7 +52,7 @@ function FilterForm({
                 setFilter('courses');
               }}
             />
-            <label htmlFor='courses'>Courses</label>
+            <label htmlFor='courses'>{translations.courses}</label>
           </div>
           <div className='border flex border-black rounded-lg px-2 w-1/2'>
             <input
@@ -67,7 +67,9 @@ function FilterForm({
                 setFilter('certifications');
               }}
             />
-            <label htmlFor='certifications'>Centificaciones</label>
+            <label htmlFor='certifications'>
+              {translations.certifications}
+            </label>
           </div>
         </div>
         <div className='flex justify-center items-center mb-4'>
@@ -75,7 +77,7 @@ function FilterForm({
             className='rounded-xl py-1 mr-2 md:p-2 md:mr-5'
             {...register('category')}
             onChange={(e) => setLanguage(e.target.value)}>
-            <option value='todos'>Todos</option>
+            <option value='all'>{translations.all[1]}</option>
             <option value=' java '>Java</option>
             <option value=' python '>Python</option>
             <option value=' javascript '>Javascript</option>
