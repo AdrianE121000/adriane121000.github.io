@@ -78,9 +78,9 @@ function FilterForm({
             {...register('category')}
             onChange={(e) => setLanguage(e.target.value)}>
             <option value='all'>{translations.all[1]}</option>
-            <option value=' java '>Java</option>
-            <option value=' python '>Python</option>
-            <option value=' javascript '>Javascript</option>
+            <option value='java'>Java</option>
+            <option value='python'>Python</option>
+            <option value='javascript'>Javascript</option>
           </select>
           <input
             id='search'
