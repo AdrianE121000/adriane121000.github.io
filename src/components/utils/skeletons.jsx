@@ -79,48 +79,42 @@ export function CourseMobileSkeleton() {
   return (
     <div className='container mx-auto px-4 mt-5'>
       <div
-        className={`${shimmer} bg-gray-200 h-32 pt-2 pl-2 pb-2 shadow-md rounded-md flex flex-row cursor-pointer hover:shadow-2xl`}>
-        <div className='w-1/3 bg-white rounded-sm'></div>
-        <div className='pl-2 w-2/3'>
-          <div className='bg-white h-8 rounded-lg w-auto mr-2 '></div>
-          <div className='bg-white mt-4 rounded-lg h-4 w-1/2 mr-2'></div>
-          <div className='bg-white mt-4 rounded-lg h-4 w-2/3 mr-2'></div>
+        className={`${shimmer} relative overflow-hidden rounded-xl bg-gray-100 p-4 shadow-sm flex flex-col gap-2`}>
+        <div
+          className={` bg-gray-200 h-28 pt-2 pl-2 pb-2 shadow-md rounded-md flex flex-row cursor-pointer hover:shadow-2xl`}>
+          <div className='w-1/3 bg-white rounded-md'></div>
+          <div className='pl-2 w-2/3'>
+            <div className='bg-white h-6 rounded-lg w-auto mr-2 '></div>
+            <div className='bg-white mt-4 rounded-lg h-4 w-1/2 mr-2'></div>
+            <div className='bg-white mt-2 rounded-lg h-4 w-2/3 mr-2'></div>
+          </div>
         </div>
-      </div>
-      <div
-        className={`${shimmer} bg-gray-200 h-32 pt-2 pl-2 pb-2 mt-5 rounded-md flex flex-row `}>
-        <div className='w-1/3 bg-white rounded-sm'></div>
-        <div className='pl-2 w-2/3'>
-          <div className='bg-white h-8 rounded-lg w-auto mr-2 '></div>
-          <div className='bg-white mt-4 rounded-lg h-4 w-1/2 mr-2'></div>
-          <div className='bg-white mt-4 rounded-lg h-4 w-2/3 mr-2'></div>
+        <div
+          className={` bg-gray-200 h-28 pt-2 pl-2 pb-2 shadow-md rounded-md flex flex-row cursor-pointer hover:shadow-2xl`}>
+          <div className='w-1/3 bg-white rounded-md'></div>
+          <div className='pl-2 w-2/3'>
+            <div className='bg-white h-6 rounded-lg w-auto mr-2 '></div>
+            <div className='bg-white mt-4 rounded-lg h-4 w-1/2 mr-2'></div>
+            <div className='bg-white mt-2 rounded-lg h-4 w-2/3 mr-2'></div>
+          </div>
         </div>
-      </div>
-      <div
-        className={`${shimmer} bg-gray-200 h-32 pt-2 pl-2 pb-2 mt-5 rounded-md flex flex-row `}>
-        <div className='w-1/3 bg-white rounded-sm'></div>
-        <div className='pl-2 w-2/3'>
-          <div className='bg-white h-8 rounded-lg w-auto mr-2 '></div>
-          <div className='bg-white mt-4 rounded-lg h-4 w-1/2 mr-2'></div>
-          <div className='bg-white mt-4 rounded-lg h-4 w-2/3 mr-2'></div>
+        <div
+          className={` bg-gray-200 h-28 pt-2 pl-2 pb-2 shadow-md rounded-md flex flex-row cursor-pointer hover:shadow-2xl`}>
+          <div className='w-1/3 bg-white rounded-md'></div>
+          <div className='pl-2 w-2/3'>
+            <div className='bg-white h-6 rounded-lg w-auto mr-2 '></div>
+            <div className='bg-white mt-4 rounded-lg h-4 w-1/2 mr-2'></div>
+            <div className='bg-white mt-2 rounded-lg h-4 w-2/3 mr-2'></div>
+          </div>
         </div>
-      </div>
-      <div
-        className={`${shimmer} bg-gray-200 h-32 pt-2 pl-2 pb-2 mt-5 rounded-md flex flex-row `}>
-        <div className='w-1/3 bg-white rounded-sm'></div>
-        <div className='pl-2 w-2/3'>
-          <div className='bg-white h-8 rounded-lg w-auto mr-2 '></div>
-          <div className='bg-white mt-4 rounded-lg h-4 w-1/2 mr-2'></div>
-          <div className='bg-white mt-4 rounded-lg h-4 w-2/3 mr-2'></div>
-        </div>
-      </div>
-      <div
-        className={`${shimmer} bg-gray-200 h-32 pt-2 pl-2 pb-2 mt-5 rounded-md flex flex-row `}>
-        <div className='w-1/3 bg-white rounded-sm'></div>
-        <div className='pl-2 w-2/3'>
-          <div className='bg-white h-8 rounded-lg w-auto mr-2 '></div>
-          <div className='bg-white mt-4 rounded-lg h-4 w-1/2 mr-2'></div>
-          <div className='bg-white mt-4 rounded-lg h-4 w-2/3 mr-2'></div>
+        <div
+          className={` bg-gray-200 h-28 pt-2 pl-2 pb-2 shadow-md rounded-md flex flex-row cursor-pointer hover:shadow-2xl`}>
+          <div className='w-1/3 bg-white rounded-md'></div>
+          <div className='pl-2 w-2/3'>
+            <div className='bg-white h-6 rounded-lg w-auto mr-2 '></div>
+            <div className='bg-white mt-4 rounded-lg h-4 w-1/2 mr-2'></div>
+            <div className='bg-white mt-2 rounded-lg h-4 w-2/3 mr-2'></div>
+          </div>
         </div>
       </div>
     </div>
