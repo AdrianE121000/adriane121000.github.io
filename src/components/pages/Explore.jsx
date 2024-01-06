@@ -58,7 +58,7 @@ const Explore = () => {
   } = useForm();
 
   const onSubmit = (event) => {
-    const newResult = result.filter((dato) =>
+    const newResult = courses.filter((dato) =>
       dato.name
         .toLowerCase()
         .includes(
