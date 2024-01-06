@@ -1,3 +1,5 @@
+import { ArrowLeft, ArrowRight } from './Icons';
+
 const Pagination = ({
   productsForPage,
   currentPage,
@@ -32,45 +34,48 @@ const Pagination = ({
           style={{ visibility: currentPage === 1 ? 'hidden' : '' }}
           onClick={onPreviusPage}
           className='inline-flex items-center rounded-md border border-gray-500 bg-white px-4 py-2 text-sm font-medium text-gray-500 '>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth={1.5}
-            stroke='currentColor'
-            className='w-6 h-6'>
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M15.75 19.5L8.25 12l7.5-7.5'
-            />
-          </svg>
+          <ArrowLeft />
         </button>
-        <button
-          style={{ visibility: pageNumbers.length <= 1 ? 'hidden' : '' }}
-          aria-current='page'
-          className='inline-flex items-center border-4 border-indigo-600 px-4 py-2 text-sm font-semibold text-gray-900  rounded-lg'>
-          {currentPage}
-        </button>
+        {pageNumbers.length >= 3 ? (
+          <>
+            <button
+              style={{ visibility: currentPage === 1 ? 'hidden' : '' }}
+              aria-current='page'
+              onClick={() => onSelectedPage(1)}
+              className='inline-flex items-center border px-4 py-2 text-sm font-semibold text-gray-900  rounded-lg'>
+              1
+            </button>
+            <button
+              style={{ visibility: pageNumbers.length <= 1 ? 'hidden' : '' }}
+              aria-current='page'
+              className='inline-flex items-center border-4 border-indigo-600 px-4 py-2 text-sm font-semibold text-gray-900  rounded-lg'>
+              {currentPage}
+            </button>
+            <button
+              style={{
+                visibility: currentPage === pageNumbers.length ? 'hidden' : '',
+              }}
+              aria-current='page'
+              onClick={() => onSelectedPage(pageNumbers.length)}
+              className='inline-flex items-center border px-4 py-2 text-sm font-semibold text-gray-900  rounded-lg'>
+              {pageNumbers.length}
+            </button>
+          </>
+        ) : (
+          <button
+            style={{ visibility: pageNumbers.length <= 1 ? 'hidden' : '' }}
+            aria-current='page'
+            className='inline-flex items-center border-4 border-indigo-600 px-4 py-2 text-sm font-semibold text-gray-900  rounded-lg'>
+            {currentPage}
+          </button>
+        )}
         <button
           style={{
             visibility: currentPage >= pageNumbers.length ? 'hidden' : '',
           }}
           onClick={onNextPage}
           className='ml-3 inline-flex items-center rounded-md border border-gray-500 bg-white px-4 py-2 text-sm font-medium text-gray-500'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth={1.5}
-            stroke='currentColor'
-            className='w-6 h-6'>
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M8.25 4.5l7.5 7.5-7.5 7.5'
-            />
-          </svg>
+          <ArrowRight />
         </button>
       </div>
       <div className='hidden sm:flex sm:flex-1 sm:items-center sm:justify-between'>
@@ -84,19 +89,7 @@ const Pagination = ({
               className='inline-flex items-center rounded-l-md px-2
               py-2 text-gray-500 border border-gray-500 '>
               <span className='sr-only'>Previous</span>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                strokeWidth={1.5}
-                stroke='currentColor'
-                className='w-6 h-6'>
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M15.75 19.5L8.25 12l7.5-7.5'
-                />
-              </svg>
+              <ArrowLeft />
             </button>
             <div className='flex gap-1'>
               {pageNumbers.map((item) => (
@@ -121,19 +114,7 @@ const Pagination = ({
               onClick={onNextPage}
               className='inline-flex items-center rounded-r-md px-2 py-2 text-gray-500 border border-gray-500'>
               <span className='sr-only'>Next</span>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                strokeWidth={1.5}
-                stroke='currentColor'
-                className='w-6 h-6'>
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M8.25 4.5l7.5 7.5-7.5 7.5'
-                />
-              </svg>
+              <ArrowRight />
             </button>
           </nav>
         </div>
