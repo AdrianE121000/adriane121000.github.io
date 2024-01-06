@@ -1,10 +1,11 @@
 import { useContext, useState } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/logo.ico';
 import Pagination from '../utils/Pagination';
 import { useCourseTimeCalculate } from '../../hooks/useCourseTimeCalculate';
 import Footer from '../utils/Footer';
+
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const CoursesCard = ({ courses }) => {
   const { translations } = useContext(LanguageContext);
@@ -31,7 +32,7 @@ const CoursesCard = ({ courses }) => {
                 <div>
                   <img
                     className='w-full h-auto object-cover rounded-md mb-2 hover:scale-105 transition duration-300 ease-in-out'
-                    src={logo}
+                    src={`${apiUrl}/image/${curso.image_id}`}
                     alt='imageCourse'
                   />
                 </div>
@@ -58,21 +59,21 @@ const CoursesCard = ({ courses }) => {
                 className='bg-white pt-2 pl-2 pb-2 shadow-md rounded-md flex flex-row cursor-pointer hover:shadow-2xl'
                 key={index}
                 onClick={() => navigate(`/course/${curso.key}`)}>
-                <div className='w-1/3'>
+                <div className='flex items-center w-1/3'>
                   <img
-                    className='w-full h-full  rounded-t-md '
-                    src={logo}
+                    className='w-full h-auto  rounded-md '
+                    src={`${apiUrl}/image/${curso.image_id}`}
                     alt='imageCourse'
                   />
                 </div>
                 <div className='pl-2 w-2/3'>
-                  <div className='text-md font-bold mb-1 line-clamp-3'>
+                  <div className='text-sm font-bold mb-1 line-clamp-2'>
                     {curso.name}
                   </div>
-                  <div className='text-blue-600 uppercase font-semibold text-sm hover:cursor-pointer'>
+                  <div className='text-blue-600 uppercase font-semibold text-xs hover:cursor-pointer'>
                     {curso.category}
                   </div>
-                  <div className='text-sm py-0'>
+                  <div className='text-xs py-0'>
                     {translations.fecha}:{' '}
                     {calculateCourseTime(curso.last_update_date)}
                   </div>

@@ -1,6 +1,6 @@
-import { useRef } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
+
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export function useAllCoursesFetch() {
   const [courses, setCourses] = useState([]);
@@ -11,15 +11,13 @@ export function useAllCoursesFetch() {
   useEffect(() => {
     loading.current = true;
     if (fetchDone) {
-      setTimeout(() => {
-        fetch('https://adriane121000.github.io/learnDeals/courses.json')
-          .then((res) => res.json())
-          .then((json) => {
-            setCourses(json.courses);
-          })
-          .catch((error) => setError(error))
-          .finally(() => (loading.current = false));
-      }, 3000);
+      fetch(`${apiUrl}/courses`)
+        .then((res) => res.json())
+        .then((json) => {
+          setCourses(json.courses);
+        })
+        .catch((error) => setError(error))
+        .finally(() => (loading.current = false));
     }
   }, [fetchDone]);
 

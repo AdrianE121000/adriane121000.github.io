@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import img from '../assets/logo.ico';
+//import img from '../assets/logo.ico';
 import { useRef } from 'react';
+
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export function useCourseFetch(key) {
   const [course, setCourse] = useState({});
@@ -9,10 +11,10 @@ export function useCourseFetch(key) {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch(`https://adriane121000.github.io/learnDeals/course.json`)
+      fetch(`${apiUrl}/courses/${key}`)
         .then((res) => res.json())
         .then((json) => {
-          setCourse(json.course);
+          setCourse(json);
         })
         .catch((error) => {
           setError(error);
@@ -21,7 +23,7 @@ export function useCourseFetch(key) {
     }, 3000);
   }, [key]);
 
-  const imgCourse = img;
+  const imgCourse = `${apiUrl}/image/${course.image_id}`;
 
   return { course, error, imgCourse, loading };
 }
