@@ -14,12 +14,12 @@ function Form({ handleSubmit, register, errors, onSubmit }) {
             id='search'
             type='text'
             placeholder={translations.search}
-            className='w-60 md:w-80 lg:w-96 px-4 py-2 rounded-l-md focus:outline-none focus:ring focus:border-blue-300'
+            className='w-60 md:w-80 bg-gray-950 lg:w-96 px-4 py-2 rounded-l-md focus:outline-none focus:ring focus:border-violet-800'
             {...register('search', { required: true })}
           />
           <button
             type='submit'
-            className='bg-blue-500 text-white px-4 py-2 rounded-r-md'>
+            className='bg-violet-800 px-4 py-2 rounded-r-md'>
             <FiSearch />
           </button>
         </div>

@@ -26,12 +26,12 @@ const CoursesCard = ({ courses }) => {
           {courses
             .map((curso, index) => (
               <div
-                className='bg-white p-4 shadow-md rounded-md flex flex-col cursor-pointer hover:shadow-2xl'
+                className='bg-black p-4 shadow-md rounded-md flex flex-col cursor-pointer hover:shadow-violet-800 hover:scale-105 transition duration-300 ease-in-out'
                 key={index}
                 onClick={() => navigate(`/course/${curso.key}`)}>
                 <div>
                   <img
-                    className='w-full h-auto object-cover rounded-md mb-2 hover:scale-105 transition duration-300 ease-in-out'
+                    className='w-full h-auto object-cover rounded-md mb-2 hover:scale-110 transition duration-300 ease-in-out'
                     src={`${apiUrl}/image/${curso.image_id}`}
                     alt='imageCourse'
                   />
@@ -56,7 +56,7 @@ const CoursesCard = ({ courses }) => {
           {courses
             .map((curso, index) => (
               <div
-                className='bg-white pt-2 pl-2 pb-2 shadow-md rounded-md flex flex-row cursor-pointer hover:shadow-2xl'
+                className='bg-black pt-2 pl-2 pb-2 shadow-md rounded-md flex flex-row cursor-pointer hover:shadow-2xl'
                 key={index}
                 onClick={() => navigate(`/course/${curso.key}`)}>
                 <div className='flex items-center w-1/3'>

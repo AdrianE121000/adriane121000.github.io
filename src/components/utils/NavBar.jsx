@@ -1,11 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import DropDown from '../utils/DropDown';
-import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.ico';
-import { useContext } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
 import { BarIcon, XMark } from '../utils/Icons';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   const { language, translations, handleLang } = useContext(LanguageContext);
@@ -33,7 +31,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className='bg-gray-800 text-white fixed z-50 w-full top-0 p-4  sm:text-lg md:text-xl '>
+      <nav className='bg-gray-950 fixed z-50 w-full top-0 p-4 sm:text-sm md:text-lg '>
         <div className='relative flex h-8 items-center justify-between'>
           <div
             className='flex flex-shrink-0 items-center cursor-pointer'
@@ -43,7 +41,9 @@ const NavBar = () => {
               alt='Logo'
               className='h-8'
             />
-            <h1 className='ml-3 font-bold'>learnDeals</h1>
+            <h1 className='ml-3 font-bold px-2 hover:text-violet-800 '>
+              learnDeals
+            </h1>
           </div>
 
           <div className=' hidden space-x-4 sm:ml-6 md:block'>
@@ -51,7 +51,7 @@ const NavBar = () => {
               <NavLink
                 key={index}
                 to={nav.to}
-                className='rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white '>
+                className='rounded-md px-3 text-sm py-2 font-medium hover:text-violet-800 shadow-md hover:shadow-violet-600 transition duration-300 ease-in-out'>
                 {nav.name}
               </NavLink>
             ))}
@@ -60,7 +60,7 @@ const NavBar = () => {
               id='select'
               value={language}
               onChange={handleLang}
-              className='bg-gray-900 rounded-md px-3 py-2 text-sm font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
+              className='bg-gray-950 rounded-md px-3 py-2 text-md font-medium hover:text-violet-800 focus:outline-none focus:border-blue-900 focus:shadow-outline-blue shadow-md hover:shadow-violet-600 transition duration-300 ease-in-out'>
               <option
                 id='English'
                 value='en'>
@@ -75,7 +75,9 @@ const NavBar = () => {
           </div>
           <div></div>
           <div className='flex items-center md:hidden'>
-            <button onClick={handleMobileMenuClick}>
+            <button
+              className='hover:text-violet-800'
+              onClick={handleMobileMenuClick}>
               {mobileMenuOpen ? <XMark /> : <BarIcon />}
             </button>
           </div>
@@ -83,16 +85,16 @@ const NavBar = () => {
       </nav>
       {mobileMenuOpen && (
         <div
-          className={`block md:hidden fixed z-50 w-full animate-slowTop bg-gray-800 text-white pb-1 sm:text-lg md:text-xl lg:text-2xl ${
+          className={`block md:hidden fixed z-50 w-full animate-slowTop bg-gray-950 pb-1 sm:text-lg md:text-xl lg:text-2xl ${
             mobileMenuOpen ? 'animate-slowBottom' : 'animate-slowTop'
           }`}>
-          <div className='flex flex-col justify-center text-center gap-1 '>
+          <div className='flex flex-col justify-center items-center text-center gap-1 '>
             {navItems.map((nav, index) => (
               <NavLink
                 key={index}
                 to={nav.to}
                 onClick={handleMobileMenuClick}
-                className='w-full rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white'>
+                className='w-2/5 rounded-md px-3 py-2 text-sm font-medium hover:text-violet-800 shadow-md hover:shadow-violet-600 transition duration-300 ease-in-out'>
                 {nav.name}
               </NavLink>
             ))}
@@ -102,7 +104,7 @@ const NavBar = () => {
                 id='select2'
                 value={language}
                 onChange={handleLang}
-                className='bg-gray-900 rounded-md px-3 py-2 text-sm text-center font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue'>
+                className='bg-gray-950 rounded-md px-3 py-2 text-sm text-center font-medium focus:outline-none hover:text-violet-800 focus:border-blue-900 focus:shadow-outline-blue focus:shadow-outline-blue shadow-md hover:shadow-violet-600 transition duration-300 ease-in-out'>
                 <option
                   id='English2'
                   value='en'>

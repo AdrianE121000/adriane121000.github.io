@@ -60,7 +60,7 @@ const Home = () => {
       />
       <div>
         {/* Sección de introducción o encabezado */}
-        <section className='bg-gray-100 p-8'>
+        <section className='p-8'>
           <div className='max-w-4xl mx-auto text-center'>
             <h1 className='text-5xl font-bold mb-4'>
               Descubre tu próximo curso online
@@ -93,27 +93,27 @@ const Home = () => {
         </section> */}
 
         {/* Sección de áreas de interés */}
-        <section className='bg-white py-12'>
+        <section className='py-12'>
           <div className='max-w-7xl mx-auto px-4'>
             <h2 className='text-2xl font-bold mb-4'>
               Explora por área de interés
             </h2>
             <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
               {areasOfInterest.map((area, index) => (
-                <div
+                <button
                   key={index}
-                  className='bg-gray-800 text-white rounded-lg text-center border border-gray-200 p-4 cursor-pointer'
+                  className='bg-gray-950 rounded-lg text-center  py-4 shadow-md hover:shadow-violet-600 hover:text-violet-800 hover:scale-105 transition duration-300 ease-in-out'
                   onClick={() => navigate('/explore')}>
                   <h3 className='text-lg'>{area.title}</h3>
                   {/* Puedes agregar más información sobre cada área si lo deseas */}
-                </div>
+                </button>
               ))}
             </div>
           </div>
         </section>
 
         {/* Sección de llamado a la acción */}
-        <section className='bg-gray-100 py-12'>
+        <section className='py-12'>
           <div className='max-w-4xl mx-auto text-center'>
             <h2 className='text-3xl font-bold mb-4'>
               Comienza tu viaje de aprendizaje hoy mismo
@@ -124,7 +124,7 @@ const Home = () => {
             </p>
             <button
               onClick={() => navigate('/courses')}
-              className='bg-gray-800 text-white rounded-lg w-52 border text-center border-gray-200 p-4 cursor-pointer'>
+              className='bg-gray-950 rounded-lg w-52 text-center p-4 shadow-md hover:shadow-violet-600 hover:text-violet-800 hover:scale-105 transition duration-300 ease-in-out'>
               Start
             </button>
           </div>
