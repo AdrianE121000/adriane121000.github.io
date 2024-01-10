@@ -15,8 +15,8 @@ const StaggeredDropDown = () => {
         className='relative'>
         <button
           onClick={() => setOpen((pv) => !pv)}
-          className='flex items-center gap-0 px-3 py-0 rounded-md shadow-md hover:shadow-violet-800 hover:text-violet-800 '>
-          <span className='font-medium'>categories</span>
+          className='flex items-center gap-0 px-3 py-2 rounded-md shadow-md hover:shadow-violet-800 hover:text-violet-800 '>
+          <span className='font-medium'>{translations.category}</span>
           <motion.span variants={iconVariants}>
             <FiChevronDown />
           </motion.span>
