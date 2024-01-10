@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import DropDown from '../utils/DropDown';
+import StaggeredDropDown from '../utils/StaggeredDropDown';
 import logo from '../../assets/logo.ico';
 import { LanguageContext } from '../../context/LanguageContext';
 import { BarIcon, XMark } from '../utils/Icons';
@@ -55,7 +55,7 @@ const NavBar = () => {
                 {nav.name}
               </NavLink>
             ))}
-            <DropDown />
+            <StaggeredDropDown />
             <select
               id='select'
               value={language}
@@ -99,7 +99,7 @@ const NavBar = () => {
               </NavLink>
             ))}
             <div className='flex justify-center gap-2'>
-              <DropDown />
+              <StaggeredDropDown />
               <select
                 id='select2'
                 value={language}
