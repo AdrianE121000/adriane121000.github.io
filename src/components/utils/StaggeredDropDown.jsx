@@ -9,7 +9,7 @@ const StaggeredDropDown = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className='relative inline-block  text-left'>
+    <div className='relative inline-block  text-left text-sm'>
       <motion.div
         animate={open ? 'open' : 'closed'}
         className='relative'>

@@ -60,7 +60,7 @@ const NavBar = () => {
               id='select'
               value={language}
               onChange={handleLang}
-              className='bg-gray-950 rounded-md px-3 py-2 text-md font-medium hover:text-violet-800 focus:outline-none focus:border-blue-900 focus:shadow-outline-blue shadow-md hover:shadow-violet-600 transition duration-300 ease-in-out'>
+              className='bg-gray-950 rounded-md px-3 py-2 text-sm font-medium hover:text-violet-800 focus:outline-none focus:border-blue-900 focus:shadow-outline-blue shadow-md hover:shadow-violet-600 transition duration-300 ease-in-out'>
               <option
                 id='English'
                 value='en'>
