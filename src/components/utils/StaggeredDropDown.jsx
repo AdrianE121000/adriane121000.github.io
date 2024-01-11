@@ -63,14 +63,14 @@ const wrapperVariants = {
     scaleY: 1,
     transition: {
       when: 'beforeChildren',
-      staggerChildren: 0.05,
+      staggerChildren: 0.025,
     },
   },
   closed: {
     scaleY: 0,
     transition: {
       when: 'afterChildren',
-      staggerChildren: 0.05,
+      staggerChildren: 0.025,
     },
   },
 };

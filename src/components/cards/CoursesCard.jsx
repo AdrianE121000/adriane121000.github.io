@@ -13,7 +13,7 @@ const CoursesCard = ({ courses }) => {
   const navigate = useNavigate();
 
   const totalProducts = courses.length;
-  const [productsForPage] = useState(10);
+  const [productsForPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
 
   const lastIndext = currentPage * productsForPage;
@@ -26,7 +26,7 @@ const CoursesCard = ({ courses }) => {
           {courses
             .map((curso, index) => (
               <div
-                className='bg-black p-4 shadow-md rounded-md flex flex-col cursor-pointer hover:shadow-violet-800 hover:scale-105 transition duration-300 ease-in-out'
+                className='bg-black p-4 shadow-lg rounded-md flex flex-col cursor-pointer hover:shadow-violet-800 hover:scale-105 transition duration-300 ease-in-out'
                 key={index}
                 onClick={() => navigate(`/course/${curso.key}`)}>
                 <div>

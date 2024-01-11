@@ -1,7 +1,6 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
 import { FiSearch } from 'react-icons/fi';
-import { useState } from 'react';
 
 function FilterForm({
   handleSubmit,

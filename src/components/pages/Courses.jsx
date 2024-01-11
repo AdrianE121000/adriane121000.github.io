@@ -1,4 +1,4 @@
-import { useContext, useState, useRef } from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import { CoursesContext } from '../../context/CoursesContext';
 import CoursesCard from '../cards/CoursesCard';
 import { sortByTime } from '../../logic/sortCoursesByTime';
@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import { LanguageContext } from '../../context/LanguageContext';
 import Cookies from '../utils/Cookies';
 import { CourseMobileSkeleton, CoursesSkeleton } from '../utils/skeletons';
-import { useEffect } from 'react';
 import Form from '../utils/Form';
 import ErrorMessage from '../utils/ErrorMessage';
 import { SEO } from '../utils/SEO';

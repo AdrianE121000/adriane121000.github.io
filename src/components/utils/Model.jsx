@@ -1,10 +1,9 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { CoursesContext } from '../../context/CoursesContext';
 import { LanguageContext } from '../../context/LanguageContext';
 import Cookies from '../utils/Cookies';
 import CoursesCard from '../cards/CoursesCard';
-import { useEffect } from 'react';
 import { CoursesSkeleton } from './skeletons';
 import ErrorMessage from './ErrorMessage';
 
