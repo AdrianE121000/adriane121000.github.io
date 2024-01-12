@@ -73,7 +73,7 @@ const Explore = () => {
 
   return (
     <>
-      <div className='bg-gray-400 mb-8 py-2'>
+      <div className='bg-gray-800 mb-8 container mx-auto py-2 w-full rounded-xl shadow-lg shadow-violet-800'>
         <FilterForm
           setLanguage={setLanguage}
           setFilter={setFilter}
@@ -83,6 +83,7 @@ const Explore = () => {
           onSubmit={onSubmit}
         />
       </div>
+
       {loading.current ? (
         <>
           <div className='hidden md:block'>

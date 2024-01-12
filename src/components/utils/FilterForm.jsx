@@ -23,57 +23,73 @@ function FilterForm({
         onSubmit={handleSubmit(onSubmit)}
         className='w-full max-w-sm mx-auto mt-4'>
         <div className='flex items-center justify-center flex-col md:flex-row mb-4 gap-1  md:gap-3 '>
-          <div className='border flex items-center border-black rounded-lg px-2 w-1/2'>
+          <div className='bg-black shadow-md hover:shadow-violet-800 transition duration-500 ease-in-out py-2 border border-violet-800 flex items-center rounded-lg px-2 w-1/2'>
             <input
               type='checkbox'
               {...register('option')}
               id='tutorials'
               value='tutorials'
-              className='mr-2'
+              className='mr-2 cursor-pointer'
               checked={selectedCheckbox === 'tutorials'}
               onChange={() => {
                 handleCheckboxChange('tutorials');
                 setFilter('tutorials');
               }}
             />
-            <label htmlFor='tutorials'>{translations.tutorials}</label>
+            <label
+              className={`hover:text-violet-800 cursor-pointer ${
+                selectedCheckbox === 'tutorials' ? 'text-violet-700' : ''
+              }`}
+              htmlFor='tutorials'>
+              {translations.tutorials}
+            </label>
           </div>
-          <div className='border flex items-center border-black rounded-lg px-2 w-1/2'>
+          <div className='bg-black shadow-md hover:shadow-violet-800 transition duration-500 ease-in-out py-2 border border-violet-800 flex items-center rounded-lg px-2 w-1/2'>
             <input
               type='checkbox'
               {...register('option')}
               value='courses'
+              className='mr-2 cursor-pointer'
               id='courses'
-              className='mr-2'
               checked={selectedCheckbox === 'courses'}
               onChange={() => {
                 handleCheckboxChange('courses');
                 setFilter('courses');
               }}
             />
-            <label htmlFor='courses'>{translations.courses}</label>
+            <label
+              className={`hover:text-violet-800 cursor-pointer ${
+                selectedCheckbox === 'courses' ? 'text-violet-700' : ''
+              }`}
+              htmlFor='courses'>
+              {translations.courses}
+            </label>
           </div>
-          <div className='border flex items-center border-black rounded-lg px-2 w-1/2'>
+          <div className='bg-black shadow-md hover:shadow-violet-800 transition duration-500 ease-in-out py-2 border border-violet-800 flex items-center rounded-lg px-2 w-1/2'>
             <input
               type='checkbox'
               {...register('option')}
               value='certifications'
               id='certifications'
-              className='mr-2'
+              className='mr-2 cursor-pointer'
               checked={selectedCheckbox === 'certifications'}
               onChange={() => {
                 handleCheckboxChange('certifications');
                 setFilter('certifications');
               }}
             />
-            <label htmlFor='certifications'>
+            <label
+              className={`hover:text-violet-800 cursor-pointer ${
+                selectedCheckbox === 'certifications' ? 'text-violet-700' : ''
+              }`}
+              htmlFor='certifications'>
               {translations.certifications}
             </label>
           </div>
         </div>
         <div className='flex justify-center items-center mb-4'>
           <select
-            className='rounded-xl py-1 mr-2 md:p-2 md:mr-5'
+            className='rounded-xl border-none bg-black py-1 px-1 mr-2 md:p-2 md:mr-5'
             {...register('category')}
             onChange={(e) => setLanguage(e.target.value)}>
             <option value='all'>{translations.all[1]}</option>
@@ -85,12 +101,12 @@ function FilterForm({
             id='search'
             type='text'
             placeholder={translations.search}
-            className='w-40 md:w-80 lg:w-96 px-4 py-2 rounded-l-md focus:outline-none focus:ring focus:border-blue-300'
+            className='bg-black w-36 md:w-80 lg:w-96 px-4 py-2 rounded-l-md shadow-md focus:outline-none focus:ring focus:border-violet-800 focus:shadow-violet-800 transition duration-300 ease-in-out'
             {...register('search', { required: true })}
           />
           <button
             type='submit'
-            className='bg-blue-500 text-white px-4 py-3 ml-1 rounded-r-md'>
+            className='bg-violet-800 px-4 py-3 ml-1 md:ml-2 rounded-r-md shadow-md hover:shadow-violet-800 hover:scale-105 transition duration-300 ease-in-out'>
             <FiSearch />
           </button>
         </div>
