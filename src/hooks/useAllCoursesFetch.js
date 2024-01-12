@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 
 const apiUrl = import.meta.env.VITE_API_URL;
-const apiKey = import.meta.env.VITE_API_KEY;
 
 export function useAllCoursesFetch() {
   const [courses, setCourses] = useState([]);
@@ -12,12 +11,7 @@ export function useAllCoursesFetch() {
   useEffect(() => {
     loading.current = true;
     if (fetchDone) {
-      fetch(`${apiUrl}/courses`, {
-        headers: {
-          'Content-Type': 'application/json',
-          'X-API_Key': apiKey,
-        },
-      })
+      fetch(`${apiUrl}/courses`)
         .then((res) => res.json())
         .then((json) => {
           setCourses(json.courses);

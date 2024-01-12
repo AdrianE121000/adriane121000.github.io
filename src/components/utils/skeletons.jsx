@@ -135,7 +135,17 @@ export function CourseSkeleton() {
         </div>
       </div>
       <div className='mt-4'>
-        <p className='mt-2 h-80 w-full rounded-md bg-gray-900 text-sm font-medium' />
+        <div className='mt-2 h-80 w-full rounded-md bg-gray-950 text-sm font-medium'>
+          <div className='h-10 w-full rounded-md bg-gray-900'></div>
+          <div className='mt-2 h-6 w-2/5 rounded-md bg-gray-900'></div>
+          <div className='mt-6 h-6 w-4/5 rounded-md bg-gray-900'></div>
+          <div className='mt-2 h-6 w-3/5 rounded-md bg-gray-900'></div>
+          <div className='mt-2 h-6 w-4/5 rounded-md bg-gray-900'></div>
+          <div className='mt-2 h-6 w-1/5 rounded-md bg-gray-900'></div>
+          <div className='mt-6 h-6 w-4/5 rounded-md bg-gray-900'></div>
+          <div className='mt-2 h-6 w-3/5 rounded-md bg-gray-900'></div>
+          <div className='mt-2 h-6 w-4/5 rounded-md bg-gray-900'></div>
+        </div>
       </div>
     </div>
   );
