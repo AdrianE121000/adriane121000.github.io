@@ -10,29 +10,6 @@ import Form from '../utils/Form';
 import ErrorMessage from '../utils/ErrorMessage';
 import { SEO } from '../utils/SEO';
 
-const keywords = [
-  'online courses',
-  'discounted courses',
-  'programming courses',
-  'web development',
-  'remote learning',
-  'digital skills',
-  'e-learning',
-  'technology education',
-  'software development',
-  'IT certification',
-  'cursos en línea',
-  'cursos con descuento',
-  'cursos de programación',
-  'desarrollo web',
-  'aprendizaje remoto',
-  'habilidades digitales',
-  'educación en línea',
-  'tecnología educativa',
-  'desarrollo de software',
-  'certificación en tecnologías de la información',
-];
-
 const Courses = () => {
   const { courses, error, loading, setFetchDone } = useContext(CoursesContext);
   const { translations } = useContext(LanguageContext);
@@ -67,7 +44,6 @@ const Courses = () => {
         title='learnDeals | Courses'
         description='All courses of the learnDeals web site.'
         image='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
-        keywords={keywords}
       />
       <Form
         handleSubmit={handleSubmit}

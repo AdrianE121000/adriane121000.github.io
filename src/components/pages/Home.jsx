@@ -3,29 +3,6 @@ import Cookies from '../utils/Cookies';
 import Footer from '../utils/Footer';
 import { SEO } from '../utils/SEO';
 
-const keywords = [
-  'online courses',
-  'discounted courses',
-  'programming courses',
-  'web development',
-  'remote learning',
-  'digital skills',
-  'e-learning',
-  'technology education',
-  'software development',
-  'IT certification',
-  'cursos en línea',
-  'cursos con descuento',
-  'cursos de programación',
-  'desarrollo web',
-  'aprendizaje remoto',
-  'habilidades digitales',
-  'educación en línea',
-  'tecnología educativa',
-  'desarrollo de software',
-  'certificación en tecnologías de la información',
-];
-
 const Home = () => {
   const navigate = useNavigate();
 
@@ -56,7 +33,6 @@ const Home = () => {
         title='learnDeals'
         description='A web site for online courses and free courses.'
         image='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
-        keywords={keywords}
       />
       <div>
         {/* Sección de introducción o encabezado */}

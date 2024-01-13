@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 
-export function SEO({ title, image, description, keywords }) {
+export function SEO({ title, image, description }) {
   return (
     <>
       <Helmet>
@@ -8,10 +8,6 @@ export function SEO({ title, image, description, keywords }) {
         <meta
           name='description'
           content={description}
-        />
-        <meta
-          name='keywords'
-          content={keywords}
         />
         <meta
           property='og:title'
