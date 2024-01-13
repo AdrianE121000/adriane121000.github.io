@@ -1,70 +1,12 @@
 import { useContext } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
-import { FaBitcoin, FaPaypal } from 'react-icons/fa';
-import { SiTether, SiEthereum, SiDogecoin, SiBinance } from 'react-icons/si';
 import { FiClipboard } from 'react-icons/fi';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Toaster, toast } from 'sonner';
 import Cookies from '../utils/Cookies';
 import Footer from '../utils/Footer';
 import { SEO } from '../utils/SEO';
-
-const elements = [
-  {
-    address: 'PayPal address',
-    icon: (
-      <FaPaypal
-        className='text-2xl'
-        color='blue'
-      />
-    ),
-  },
-  {
-    address: 'BTC address',
-    icon: (
-      <FaBitcoin
-        className='text-2xl'
-        color='orange'
-      />
-    ),
-  },
-  {
-    address: 'BNB address',
-    icon: (
-      <SiBinance
-        className='text-2xl'
-        color='yellow'
-      />
-    ),
-  },
-  {
-    address: 'ETH address',
-    icon: (
-      <SiEthereum
-        className='text-2xl'
-        color='violet'
-      />
-    ),
-  },
-  {
-    address: 'USDT TRC-20 address',
-    icon: (
-      <SiTether
-        className='text-2xl'
-        color='green'
-      />
-    ),
-  },
-  {
-    address: 'DOGE address',
-    icon: (
-      <SiDogecoin
-        className='text-2xl'
-        color='yellow'
-      />
-    ),
-  },
-];
+import { elements } from '../constants/constants';
 
 const Donation = () => {
   const { translations } = useContext(LanguageContext);

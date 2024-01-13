@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import Cookies from '../utils/Cookies';
 import Footer from '../utils/Footer';
 import { SEO } from '../utils/SEO';
+import { areasOfInterest } from '../constants/constants';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -18,14 +19,6 @@ const Home = () => {
   // function handleLanguageClick(lang) {
   //   alert(`Te manda para los cursos de: ${lang}`);
   // }
-
-  const areasOfInterest = [
-    { title: 'Negocio', slug: 'buissnes' },
-    { title: 'Diseño', slug: 'desing' },
-    { title: 'Marketing', slug: 'marketing' },
-    { title: 'Programacion', slug: 'programing' },
-    // Agrega las áreas adicionales de interés que desees mostrar
-  ];
 
   return (
     <>
