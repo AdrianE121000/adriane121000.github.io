@@ -33,11 +33,7 @@ const Explore = () => {
     setResult(
       filter === 'courses'
         ? courses.filter((dato) =>
-            dato.name
-              .toLowerCase()
-              .includes(
-                language === 'all' ? '' : `${language} ` || ` ${language}`
-              )
+            dato.name.toLowerCase().includes(language === 'all' ? '' : language)
           )
         : filter === 'tutorials'
         ? tutorials.courses.filter((dato) =>
@@ -59,11 +55,7 @@ const Explore = () => {
 
   const onSubmit = (event) => {
     const newResult = courses.filter((dato) =>
-      dato.name
-        .toLowerCase()
-        .includes(
-          `${event.search.toLowerCase()} ` || ` ${event.search.toLowerCase()}`
-        )
+      dato.name.toLowerCase().includes(event.search.toLowerCase())
     );
 
     setResult(newResult);
