@@ -30,7 +30,7 @@ const Model = () => {
       ) : coursesFilteredByCategory.length === 0 ? (
         <ErrorMessage text={translations.noCourses} />
       ) : (
-        <div className='mt-24'>
+        <div className='pt-1'>
           <Cookies />
           <CoursesCard courses={coursesFilteredByCategory} />
         </div>
