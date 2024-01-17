@@ -6,6 +6,7 @@ import Cookies from '../utils/Cookies';
 import CoursesCard from '../cards/CoursesCard';
 import { CoursesSkeleton } from './skeletons';
 import ErrorMessage from './ErrorMessage';
+import { categories } from '../constants/constants';
 
 const Model = () => {
   const { category } = useParams();
@@ -16,7 +17,9 @@ const Model = () => {
   const { translations } = useContext(LanguageContext);
 
   const coursesFilteredByCategory = courses.filter(
-    (course) => course.category === category
+    (course) =>
+      (course.category === category) |
+      (course.category === categories[category]?.es)
   );
 
   return (
