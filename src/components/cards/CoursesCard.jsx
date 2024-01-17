@@ -19,6 +19,18 @@ const CoursesCard = ({ courses }) => {
   const lastIndext = currentPage * productsForPage;
   const firstIndex = lastIndext - productsForPage;
 
+  const onPreviusPage = () => {
+    setCurrentPage(currentPage - 1);
+  };
+
+  const onNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const onSelectedPage = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
     <>
       <div className='container mx-auto px-4 mt-5'>
@@ -87,6 +99,9 @@ const CoursesCard = ({ courses }) => {
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           totalProducts={totalProducts}
+          onNextPage={onNextPage}
+          onPreviusPage={onPreviusPage}
+          onSelectedPage={onSelectedPage}
         />
       </div>
       <Footer />

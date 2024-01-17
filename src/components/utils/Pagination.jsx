@@ -3,26 +3,16 @@ import { ArrowLeft, ArrowRight } from './Icons';
 const Pagination = ({
   productsForPage,
   currentPage,
-  setCurrentPage,
   totalProducts,
+  onNextPage,
+  onPreviusPage,
+  onSelectedPage,
 }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalProducts / productsForPage); i++) {
     pageNumbers.push(i);
   }
-
-  const onPreviusPage = () => {
-    setCurrentPage(currentPage - 1);
-  };
-
-  const onNextPage = () => {
-    setCurrentPage(currentPage + 1);
-  };
-
-  const onSelectedPage = (page) => {
-    setCurrentPage(page);
-  };
 
   return (
     <div
