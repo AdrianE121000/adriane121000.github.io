@@ -90,6 +90,13 @@ export const dictionary = {
     courses: 'Cursos',
     certifications: 'Certificaciones',
     tutorials: 'Tutoriales',
+    introHome: 'Descubre tu próximo curso online',
+    titleHome: 'Explora una variedad de cursos para potenciar tu aprendizaje.',
+    interesting: 'Explora por área de interés',
+    introStart: 'Comienza tu viaje de aprendizaje hoy mismo',
+    titleStart:
+      'Encuentra el curso perfecto para ti y lleva tus habilidades al siguiente nivel.',
+    startButton: 'Comienza a aprender',
   },
   en: {
     routes: [
@@ -182,5 +189,12 @@ export const dictionary = {
     courses: 'Courses',
     certifications: 'Certifications',
     tutorials: 'Tutorials',
+    introHome: 'Discover your next online course',
+    titleHome: 'Explore a variety of courses to enhance your learning.',
+    interesting: 'Explore by area of ​​interest',
+    introStart: 'Start your learning journey today',
+    titleStart:
+      'Find the perfect course for you and take your skills to the next level.',
+    startButton: 'Start learning',
   },
 };

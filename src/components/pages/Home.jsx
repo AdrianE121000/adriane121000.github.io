@@ -2,24 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import Cookies from '../utils/Cookies';
 import Footer from '../utils/Footer';
 import { SEO } from '../utils/SEO';
-import { areasOfInterest } from '../constants/constants';
+import { useContext } from 'react';
+import { LanguageContext } from '../../context/LanguageContext';
 
 const Home = () => {
   const navigate = useNavigate();
-
-  // const programmingLanguages = [
-  //   'JavaScript',
-  //   'Python',
-  //   'Java',
-  //   'Ruby',
-  //   'C++',
-  //   // Agrega los lenguajes adicionales que desees mostrar
-  // ];
-
-  // function handleLanguageClick(lang) {
-  //   alert(`Te manda para los cursos de: ${lang}`);
-  // }
-
+  const { translations } = useContext(LanguageContext);
   return (
     <>
       <SEO
@@ -28,17 +16,12 @@ const Home = () => {
         image='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
       />
       <div>
-        {/* Sección de introducción o encabezado */}
         <section className='p-8'>
           <div className='max-w-4xl mx-auto text-center'>
             <h1 className='text-5xl font-bold mb-4'>
-              Descubre tu próximo curso online
+              {translations.introHome}
             </h1>
-            <p className='text-2xl mb-8'>
-              Explora una variedad de cursos para potenciar tu aprendizaje.
-            </p>
-            {/* Formulario de búsqueda o componente de filtrado */}
-            {/* Aquí puedes incluir un formulario de búsqueda o el componente de filtrado que mencionaste en tu navBar */}
+            <p className='text-2xl mb-8'>{translations.titleHome}</p>
           </div>
         </section>
 
@@ -61,40 +44,34 @@ const Home = () => {
           </div>
         </section> */}
 
-        {/* Sección de áreas de interés */}
         <section className='py-12'>
           <div className='max-w-7xl mx-auto px-4'>
             <h2 className='text-2xl font-bold mb-4'>
-              Explora por área de interés
+              {translations.interesting}
             </h2>
             <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-              {areasOfInterest.map((area, index) => (
+              {translations.routes.map((element, index) => (
                 <button
                   key={index}
                   className='bg-gray-950 rounded-lg text-center  py-4 shadow-md hover:shadow-violet-600 hover:text-violet-800 hover:scale-105 transition duration-300 ease-in-out'
-                  onClick={() => navigate('/explore')}>
-                  <h3 className='text-lg'>{area.title}</h3>
-                  {/* Puedes agregar más información sobre cada área si lo deseas */}
+                  onClick={() => navigate(`/cat/${element.ruta}`)}>
+                  <h3 className='text-lg'>{element.nombre}</h3>
                 </button>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Sección de llamado a la acción */}
         <section className='py-12'>
           <div className='max-w-4xl mx-auto text-center'>
             <h2 className='text-3xl font-bold mb-4'>
-              Comienza tu viaje de aprendizaje hoy mismo
+              {translations.introStart}
             </h2>
-            <p className='text-lg mb-8'>
-              Encuentra el curso perfecto para ti y lleva tus habilidades al
-              siguiente nivel.
-            </p>
+            <p className='text-lg mb-8'>{translations.titleStart}</p>
             <button
               onClick={() => navigate('/courses')}
               className='bg-gray-950 rounded-lg w-52 text-center p-4 shadow-md hover:shadow-violet-600 hover:text-violet-800 hover:scale-105 transition duration-300 ease-in-out'>
-              Start
+              {translations.startButton}
             </button>
           </div>
         </section>
