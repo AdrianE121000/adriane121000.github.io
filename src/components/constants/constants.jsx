@@ -3,7 +3,8 @@ import { SiTether, SiEthereum, SiDogecoin, SiBinance } from 'react-icons/si';
 
 export const elements = [
   {
-    address: 'PayPal address',
+    address: 'Soon',
+    name: 'PayPal',
     icon: (
       <FaPaypal
         className='text-2xl'
@@ -12,7 +13,8 @@ export const elements = [
     ),
   },
   {
-    address: 'BTC address',
+    address: 'bc1q38vpavrmcgs36nkthqy6vn3qpg6fujcf2ymwpr',
+    name: 'BTC',
     icon: (
       <FaBitcoin
         className='text-2xl'
@@ -21,7 +23,8 @@ export const elements = [
     ),
   },
   {
-    address: 'BNB address',
+    address: '0x54462d4cc3B7FE06e9CB3E5eE55486168923C080',
+    name: 'BNB BSC',
     icon: (
       <SiBinance
         className='text-2xl'
@@ -30,7 +33,8 @@ export const elements = [
     ),
   },
   {
-    address: 'ETH address',
+    address: 'soon',
+    name: 'ETH',
     icon: (
       <SiEthereum
         className='text-2xl'
@@ -39,7 +43,8 @@ export const elements = [
     ),
   },
   {
-    address: 'USDT TRC-20 address',
+    address: 'soon',
+    name: 'USDT TRC-20',
     icon: (
       <SiTether
         className='text-2xl'
@@ -48,7 +53,8 @@ export const elements = [
     ),
   },
   {
-    address: 'DOGE address',
+    address: 'DFAKSNekBRT5KeB5z5ricyRJVgBPZXtXsU',
+    name: 'DOGE',
     icon: (
       <SiDogecoin
         className='text-2xl'

@@ -28,22 +28,29 @@ const Donation = () => {
             {elements.map((element, index) => (
               <div
                 key={index}
-                className='flex items-center justify-center m-2  '>
-                {element.icon}
-                <input
-                  type='text'
-                  name={element.address}
-                  value={element.address}
-                  readOnly
-                  className='mx-2 p-1 bg-black border border-violet-800 rounded  '
-                />
-                <CopyToClipboard text={element.address}>
-                  <button
-                    onClick={() => toast.success(`Copied: ${element.address}`)}
-                    className='flex items-center bg-violet-800 border-none rounded py-2 px-2 shadow-md hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out'>
-                    <FiClipboard />
-                  </button>
-                </CopyToClipboard>
+                className='flex items-center justify-between m-1 md:m-3  '>
+                <div className='flex flex-col justify-center items-center w-24 text-xs md:text-sm'>
+                  {element.icon}
+                  {element.name}
+                </div>
+                <div className='flex'>
+                  <input
+                    type='text'
+                    name={element.address}
+                    value={element.address}
+                    readOnly
+                    className='mx-1 md:mx-2 md:p-1 bg-black border border-violet-800 rounded  '
+                  />
+                  <CopyToClipboard text={element.address}>
+                    <button
+                      onClick={() =>
+                        toast.success(`Copied: ${element.address}`)
+                      }
+                      className='flex items-center bg-violet-800 border-none rounded py-2 px-2 shadow-md hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out'>
+                      <FiClipboard />
+                    </button>
+                  </CopyToClipboard>
+                </div>
               </div>
             ))}
           </div>
