@@ -4,6 +4,8 @@ import { useCourseTimeCalculate } from '../../hooks/useCourseTimeCalculate';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../utils/Footer';
 import Cookies from '../utils/Cookies';
+import { Left, Right } from '../utils/Icons';
+import { CiCoffeeCup } from 'react-icons/ci';
 
 const CourseCard = ({ course, imgCourse }) => {
   const { translations } = useContext(LanguageContext);
@@ -43,18 +45,26 @@ const CourseCard = ({ course, imgCourse }) => {
             dangerouslySetInnerHTML={{ __html: course.description }}
           />
         </div>
-        <div className='flex justify-between mt-4'>
+        <div className='flex justify-evenly mt-4'>
           <button
             onClick={() => navigate(-1)}
-            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-30 ease-in-out font-bold py-2 px-4 rounded inline-flex items-center'>
-            <span>{translations.volver}</span>
+            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out font-bold py-2 px-4 rounded inline-flex items-center'>
+            <Left />
+            <span className='ml-2'>{translations.volver}</span>
+          </button>
+          <button
+            onClick={() => navigate('/donation')}
+            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out font-bold py-2 px-2 rounded inline-flex items-center'>
+            <CiCoffeeCup size='25px' />
+            <span className='ml-1'>{translations.coffe}</span>
           </button>
           <a
             href={course.url}
             target='_blank'
             rel='noreferrer'
-            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-30 ease-in-out font-bold py-2 px-4 rounded inline-flex items-center'>
-            <span>{translations.ir}</span>
+            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out font-bold py-2 px-4 rounded inline-flex items-center'>
+            <span className='mr-2'>{translations.ir}</span>
+            <Right />
           </a>
         </div>
       </div>

@@ -23,10 +23,6 @@ const NavBar = () => {
       name: translations.all[0],
       to: '/courses',
     },
-    {
-      name: 'Donation',
-      to: '/donation',
-    },
   ];
 
   return (

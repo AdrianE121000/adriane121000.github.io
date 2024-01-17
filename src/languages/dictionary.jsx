@@ -97,6 +97,7 @@ export const dictionary = {
     titleStart:
       'Encuentra el curso perfecto para ti y lleva tus habilidades al siguiente nivel.',
     startButton: 'Comienza a aprender',
+    coffe: 'Cómprame un café',
   },
   en: {
     routes: [
@@ -196,5 +197,6 @@ export const dictionary = {
     titleStart:
       'Find the perfect course for you and take your skills to the next level.',
     startButton: 'Start learning',
+    coffe: 'Buy me a coffee',
   },
 };
