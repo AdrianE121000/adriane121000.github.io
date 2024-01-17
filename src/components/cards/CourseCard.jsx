@@ -48,22 +48,22 @@ const CourseCard = ({ course, imgCourse }) => {
         <div className='flex justify-evenly mt-4'>
           <button
             onClick={() => navigate(-1)}
-            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out font-bold py-2 px-4 rounded inline-flex items-center'>
+            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out font-bold text-xs md:text-sm py-1 md:py-2 px-1 md:px-4 rounded inline-flex items-center'>
             <Left />
-            <span className='ml-2'>{translations.volver}</span>
+            <span className='ml-0 md:ml-2'>{translations.volver}</span>
           </button>
           <button
             onClick={() => navigate('/donation')}
-            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out font-bold py-2 px-2 rounded inline-flex items-center'>
+            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out font-bold text-xs md:text-sm py-1 md:py-2 px-1 md:px-4 rounded inline-flex items-center'>
             <CiCoffeeCup size='25px' />
-            <span className='ml-1'>{translations.coffe}</span>
+            <span className='ml-0 md:ml-1'>{translations.coffe}</span>
           </button>
           <a
             href={course.url}
             target='_blank'
             rel='noreferrer'
-            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out font-bold py-2 px-4 rounded inline-flex items-center'>
-            <span className='mr-2'>{translations.ir}</span>
+            className='bg-violet-800 shadow-md hover:bg-gray-950 hover:text-violet-800 hover:shadow-violet-800 hover:scale-110 transition duration-300 ease-in-out font-bold text-xs md:text-sm py-1 md:py-2 px-1 md:px-4 rounded inline-flex items-center'>
+            <span className='mr-0 md:mr-2'>{translations.ir}</span>
             <Right />
           </a>
         </div>

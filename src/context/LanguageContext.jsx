@@ -10,8 +10,8 @@ export function LanguageProvider({ children }) {
   const [translations, setTranslations] = useState(dictionary[language]);
 
   function handleLang(e) {
-    setLanguage(e.target.value);
-    setTranslations(dictionary[e.target.value]);
+    setLanguage(e);
+    setTranslations(dictionary[e]);
   }
 
   return (

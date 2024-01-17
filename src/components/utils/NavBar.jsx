@@ -4,9 +4,10 @@ import logo from '../../assets/logo.ico';
 import { LanguageContext } from '../../context/LanguageContext';
 import { BarIcon, XMark } from '../utils/Icons';
 import { useNavigate, NavLink } from 'react-router-dom';
+import DropDown from './DropDown';
 
 const NavBar = () => {
-  const { language, translations, handleLang } = useContext(LanguageContext);
+  const { translations } = useContext(LanguageContext);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -42,7 +43,7 @@ const NavBar = () => {
             </h1>
           </div>
 
-          <div className=' hidden space-x-4 sm:ml-6 md:block'>
+          <div className='hidden space-x-4 md:block'>
             {navItems.map((nav, index) => (
               <NavLink
                 key={index}
@@ -52,24 +53,10 @@ const NavBar = () => {
               </NavLink>
             ))}
             <StaggeredDropDown />
-            <select
-              id='select'
-              value={language}
-              onChange={handleLang}
-              className='bg-gray-950 rounded-md px-3 py-2 text-sm font-medium hover:text-violet-800 focus:outline-none focus:border-blue-900 focus:shadow-outline-blue shadow-md hover:shadow-violet-600 transition duration-300 ease-in-out'>
-              <option
-                id='English'
-                value='en'>
-                English
-              </option>
-              <option
-                id='Español'
-                value='es'>
-                Spanish
-              </option>
-            </select>
           </div>
-          <div></div>
+          <div className='hidden space-x-4 pr-10 md:flex'>
+            <DropDown />
+          </div>
           <div className='flex items-center md:hidden'>
             <button
               className='hover:text-violet-800'
@@ -96,22 +83,7 @@ const NavBar = () => {
             ))}
             <div className='flex justify-center gap-2'>
               <StaggeredDropDown />
-              <select
-                id='select2'
-                value={language}
-                onChange={handleLang}
-                className='bg-gray-950 rounded-md px-3 py-2 text-sm text-center font-medium focus:outline-none hover:text-violet-800 focus:border-blue-900 focus:shadow-outline-blue focus:shadow-outline-blue shadow-md hover:shadow-violet-600 transition duration-300 ease-in-out'>
-                <option
-                  id='English2'
-                  value='en'>
-                  English
-                </option>
-                <option
-                  id='Español2'
-                  value='es'>
-                  Spanish
-                </option>
-              </select>
+              <DropDown />
             </div>
           </div>
         </div>
