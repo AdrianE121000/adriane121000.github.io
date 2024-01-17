@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Pagination from '../utils/Pagination';
 import { useCourseTimeCalculate } from '../../hooks/useCourseTimeCalculate';
 import Footer from '../utils/Footer';
+import { useEffect } from 'react';
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -15,6 +16,10 @@ const CoursesCard = ({ courses }) => {
   const totalProducts = courses.length;
   const [productsForPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [courses]);
 
   const lastIndext = currentPage * productsForPage;
   const firstIndex = lastIndext - productsForPage;
