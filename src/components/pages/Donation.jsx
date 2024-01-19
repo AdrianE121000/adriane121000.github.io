@@ -6,7 +6,7 @@ import { Toaster, toast } from 'sonner';
 import Cookies from '../utils/Cookies';
 import Footer from '../utils/Footer';
 import { SEO } from '../utils/SEO';
-import { elements } from '../constants/constants';
+import { elements } from '../../constants/constants';
 
 const Donation = () => {
   const { translations } = useContext(LanguageContext);

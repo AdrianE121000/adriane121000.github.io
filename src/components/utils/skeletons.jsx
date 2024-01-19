@@ -1,4 +1,4 @@
-import { shimmer } from '../constants/constants';
+import { shimmer } from '../../constants/constants';
 
 export function CoursesSkeleton() {
   return (

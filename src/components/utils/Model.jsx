@@ -6,7 +6,7 @@ import Cookies from '../utils/Cookies';
 import CoursesCard from '../cards/CoursesCard';
 import { CoursesSkeleton } from './skeletons';
 import ErrorMessage from './ErrorMessage';
-import { categories } from '../constants/constants';
+import { categories } from '../../constants/constants';
 
 const Model = () => {
   const { category } = useParams();
