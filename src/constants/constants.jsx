@@ -43,7 +43,7 @@ export const elements = [
     ),
   },
   {
-    address: 'soon',
+    address: 'TPQNT8km5gCXVZgWPrwfdFMmV1TLJQjvsH',
     name: 'USDT TRC-20',
     icon: (
       <SiTether
