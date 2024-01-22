@@ -14,7 +14,7 @@ const Footer = () => {
             <img
               src={logo}
               alt='learnDeals image'
-              className='h-8 w-8 mb-2 ml-2'
+              className='h-8 w-8 mb-2 ml-2 rounded-full'
             />
           </div>
           <p className='mb-2 ml-2 text-xl'>{translations.tlChannel}</p>

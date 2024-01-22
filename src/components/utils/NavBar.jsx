@@ -36,9 +36,9 @@ const NavBar = () => {
             <img
               src={logo}
               alt='Logo'
-              className='h-8'
+              className='h-8 rounded-full'
             />
-            <h1 className='ml-3 font-bold px-2 hover:text-violet-800 '>
+            <h1 className='ml-0 font-bold px-2 hover:text-violet-800 '>
               learnDeals
             </h1>
           </div>
