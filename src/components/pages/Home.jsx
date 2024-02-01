@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Cookies from '../utils/Cookies';
 import Footer from '../utils/Footer';
-import { SEO } from '../utils/SEO';
 import { useContext } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
 
@@ -10,11 +9,6 @@ const Home = () => {
   const { translations } = useContext(LanguageContext);
   return (
     <>
-      <SEO
-        title='learnDeals'
-        description='A web site for online courses and free courses.'
-        image='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
-      />
       <div>
         <section className='p-8'>
           <div className='max-w-4xl mx-auto text-center'>
