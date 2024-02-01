@@ -5,7 +5,6 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Toaster, toast } from 'sonner';
 import Cookies from '../utils/Cookies';
 import Footer from '../utils/Footer';
-import { SEO } from '../utils/SEO';
 import { elements } from '../../constants/constants';
 
 const Donation = () => {
@@ -13,11 +12,6 @@ const Donation = () => {
 
   return (
     <>
-      <SEO
-        title='learnDeals | Donation'
-        description='Buy me a coffe'
-        image='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
-      />
       <Cookies />
       <Toaster richColors />
       <div className='container mx-auto px-4 mt-16'>

@@ -25,25 +25,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Sección de cursos de programación */}
-        {/* <section className='bg-white py-12'>
-          <div className='max-w-7xl mx-auto px-4'>
-            <h2 className='text-2xl font-bold mb-4'>
-              Explora por lenguaje de programación
-            </h2>
-            <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-              {programmingLanguages.map((language, index) => (
-                <div
-                  key={index}
-                  className='bg-gray-800 text-white rounded-lg  text-center p-4 cursor-pointer'
-                  onClick={() => handleLanguageClick(language)}>
-                  <h3 className='text-lg'>{language}</h3>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
         <section className='py-12'>
           <div className='max-w-7xl mx-auto px-4'>
             <h2 className='text-2xl font-bold mb-4'>

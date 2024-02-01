@@ -8,7 +8,6 @@ import Cookies from '../utils/Cookies';
 import { CourseMobileSkeleton, CoursesSkeleton } from '../utils/skeletons';
 import Form from '../utils/Form';
 import ErrorMessage from '../utils/ErrorMessage';
-import { SEO } from '../utils/SEO';
 
 const Courses = () => {
   const { courses, error, loading, setFetchDone } = useContext(CoursesContext);
@@ -40,11 +39,6 @@ const Courses = () => {
 
   return (
     <>
-      <SEO
-        title='learnDeals | Courses'
-        description='All courses of the learnDeals web site.'
-        image='https://raw.githubusercontent.com/adriane121000/adriane121000/master/resources/learnDeals.jpg'
-      />
       <Form
         handleSubmit={handleSubmit}
         register={register}
